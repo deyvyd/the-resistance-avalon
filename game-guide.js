@@ -311,8 +311,8 @@ AvalonApp.prototype.generateGameSteps = function (
     title: "💀 Tentativa de Assassinato",
     content: [
       {
-        type: "action",
-        text: "Se o Bem conquister Sucesso em 3 missões, o jogo NÃO termina imediatamente",
+        type: "note",
+        text: "Se o Bem conquistar Sucesso em 3 missões, o jogo NÃO termina imediatamente",
       },
       {
         type: "action",
@@ -341,11 +341,33 @@ AvalonApp.prototype.generateGameSteps = function (
     content: [
       {
         type: "action",
-        text: "BEM vence: 3 missões bem-sucedidas + Merlin sobrevive ao assassinato",
+        marker: "bullet",
+        text: "BEM vence se:",
+        subactions: [
+          {
+            type: "unordered",
+            text: "3 missões bem-sucedidas + Merlin sobrevive ao assassinato",
+          },
+        ],
       },
       {
         type: "action",
-        text: "MAL vence: 3 missões falham OU 5 times rejeitados consecutivamente OU conseguir assassinar Merlin",
+        marker: "bullet",
+        text: "MAL vence se:",
+        subactions: [
+          {
+            type: "unordered",
+            text: "3 missões falham OU",
+          },
+          {
+            type: "unordered",
+            text: "5 times rejeitados consecutivamente OU",
+          },
+          {
+            type: "unordered",
+            text: "conseguir assassinar Merlin",
+          },
+        ],
       },
     ],
     type: "endgame",
@@ -416,8 +438,13 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
             li.style.position = "relative";
             li.style.paddingLeft = "0";
 
-            // Adicionar numeração manual
-            li.innerHTML = `<span style="display: inline-block; width: 25px; color: #ffd700; font-weight: bold;">${actionCounter}.</span>${item.text}`;
+            // Determinar marcador: bullet ou número
+            const marker =
+              item.marker === "bullet"
+                ? `<span style="display: inline-block; width: 25px; color: #ffd700; font-weight: bold;">•</span>`
+                : `<span style="display: inline-block; width: 25px; color: #ffd700; font-weight: bold;">${actionCounter}.</span>`;
+
+            li.innerHTML = `${marker}${item.text}`;
             li.setAttribute("data-type", "action");
             contentOl.appendChild(li);
 
