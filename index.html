@@ -251,6 +251,15 @@
     <div id="gameGuideModal" class="modal" style="display: none">
       <div class="modal-backdrop" onclick="app.closeGameGuide()"></div>
       <div class="modal-content modal-content-wide">
+        <!-- Botão de fechar no canto superior direito -->
+        <button
+          class="modal-close-btn"
+          onclick="app.closeGameGuide()"
+          title="Fechar"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+
         <h2 class="modal-title">🗺️ GUIA DO JOGO</h2>
 
         <!-- Seção de Recursos Opcionais -->
@@ -333,12 +342,6 @@
           <div id="gameStepsContainer" class="game-steps-container">
             <!-- As etapas serão inseridas aqui dinamicamente -->
           </div>
-        </div>
-
-        <div class="modal-actions">
-          <button class="btn btn-primary" onclick="app.closeGameGuide()">
-            <i class="fas fa-check"></i> Entendido
-          </button>
         </div>
       </div>
     </div>
