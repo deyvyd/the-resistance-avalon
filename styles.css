@@ -100,11 +100,18 @@ body {
 
 .section-title {
   font-family: "Cinzel", serif;
+  font-size: 1.5em;
   color: #ffd700;
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  padding-bottom: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.section-subtitle {
+  font-family: "Cinzel", serif;
+  font-size: 1.2em;
+  color: #d4af37;
+  margin: 25px 0 15px 0;
 }
 
 /* ===== SELETOR DE JOGADORES ===== */
@@ -1114,22 +1121,6 @@ body {
   margin-bottom: 30px;
   border-radius: 12px;
   border: 2px solid rgba(255, 215, 0, 0.2);
-}
-
-.section-title {
-  font-family: "Cinzel", serif;
-  font-size: 1.5em;
-  color: #ffd700;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
-}
-
-.section-subtitle {
-  font-family: "Cinzel", serif;
-  font-size: 1.2em;
-  color: #d4af37;
-  margin: 25px 0 15px 0;
 }
 
 .section-content {
