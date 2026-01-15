@@ -17,17 +17,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Botões Flutuantes (Configurações + Manual) -->
+    <div class="floating-buttons">
+      <button class="floating-btn" onclick="app.openSettings()" data-tooltip="Configurações">
+        <i class="fas fa-cog"></i>
+      </button>
+      <a href="manual.html" class="floating-btn" data-tooltip="Manual de Regras">
+        <i class="fas fa-book"></i>
+      </a>
+    </div>
+
     <!-- Título Principal -->
     <div class="game-title">
       <h2 class="sub-title">THE RESISTANCE</h2>
       <h1 class="main-title">AVALON</h1>
-      <button
-        id="settingsBtnMain"
-        class="settings-btn-main"
-        onclick="app.openSettings()"
-      >
-        <i class="fas fa-cog"></i>
-      </button>
     </div>
 
     <div class="container">

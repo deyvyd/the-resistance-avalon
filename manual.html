@@ -17,32 +17,32 @@
     <link href="src/assets/fontawesome/css/all.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- Navegação Lateral Suspensa -->
-    <div class="side-nav">
-      <a href="#objetivo" class="side-nav-btn">
-        <i class="fas fa-trophy"></i> Objetivo
+    <!-- Botões Flutuantes - Navegação -->
+    <div class="floating-buttons">
+      <a href="index.html" class="floating-btn" data-tooltip="Voltar ao Jogo">
+        <i class="fas fa-arrow-left"></i>
       </a>
-      <a href="#preparacao" class="side-nav-btn">
-        <i class="fas fa-cog"></i> Preparação
+      <a href="#objetivo" class="floating-btn" data-tooltip="Objetivo">
+        <i class="fas fa-trophy"></i>
       </a>
-      <a href="#como-jogar" class="side-nav-btn">
-        <i class="fas fa-gamepad"></i> Como Jogar
+      <a href="#preparacao" class="floating-btn" data-tooltip="Preparação">
+        <i class="fas fa-cog"></i>
       </a>
-      <a href="#personagens" class="side-nav-btn">
-        <i class="fas fa-users"></i> Personagens
+      <a href="#como-jogar" class="floating-btn" data-tooltip="Como Jogar">
+        <i class="fas fa-gamepad"></i>
       </a>
-      <a href="#final" class="side-nav-btn">
-        <i class="fas fa-flag-checkered"></i> Final do Jogo
+      <a href="#personagens" class="floating-btn" data-tooltip="Personagens">
+        <i class="fas fa-users"></i>
       </a>
-      <a href="#regras-opcionais" class="side-nav-btn">
-        <i class="fas fa-star"></i> Regras Opcionais
+      <a href="#final" class="floating-btn" data-tooltip="Final do Jogo">
+        <i class="fas fa-flag-checkered"></i>
       </a>
       <a
-        href="index.html"
-        class="side-nav-btn"
-        style="margin-top: 10px; border-color: #4169e1"
+        href="#regras-opcionais"
+        class="floating-btn"
+        data-tooltip="Regras Opcionais"
       >
-        <i class="fas fa-arrow-left"></i> Voltar ao Jogo
+        <i class="fas fa-star"></i>
       </a>
     </div>
 
@@ -1312,10 +1312,12 @@
         });
       });
 
-      // Highlight da seção atual ao rolar
+      // Highlight da seção atual ao rolar (botões flutuantes)
       window.addEventListener("scroll", () => {
         const sections = document.querySelectorAll(".section[id]");
-        const navButtons = document.querySelectorAll(".side-nav-btn");
+        const navButtons = document.querySelectorAll(
+          ".floating-btn[href^='#']"
+        );
 
         let current = "";
         sections.forEach((section) => {
@@ -1364,4 +1366,3 @@
     </script>
   </body>
 </html>
-
