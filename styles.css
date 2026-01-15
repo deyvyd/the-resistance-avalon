@@ -280,17 +280,17 @@ body {
 }
 
 .btn-start {
-  background: linear-gradient(145deg, #2ecc71, #27ae60);
+  background: linear-gradient(145deg, #27ae60, #229954);
   color: #fff;
   border: 2px solid #27ae60;
 }
 
 .btn-start:hover:not(:disabled) {
-  background: linear-gradient(145deg, #27ae60, #229954);
+  background: linear-gradient(145deg, #219752, #1d8649);
 }
 
 .btn-close {
-  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  background: linear-gradient(145deg, #cc3d2d, #aa3225);
   color: #fff;
   border: 2px solid #c0392b;
   width: 100%;
@@ -298,7 +298,7 @@ body {
 }
 
 .btn-close:hover {
-  background: linear-gradient(145deg, #c0392b, #a93226);
+  background: linear-gradient(145deg, #b13527, #942b21);
 }
 
 /* ===== PLAYER DE ÁUDIO ===== */

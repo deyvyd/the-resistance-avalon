@@ -15,6 +15,35 @@
     />
     <link href="src/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
     <link href="src/assets/fontawesome/css/all.css" rel="stylesheet" />
+    <style>
+      /* Estilos para Accordion */
+      .accordion-header {
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-header:hover {
+        opacity: 0.8;
+      }
+
+      .accordion-header::after {
+        content: " ▼";
+        display: inline-block;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+        font-size: 0.8em;
+      }
+
+      .accordion-section .accordion-content {
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .accordion-header.collapsed::after {
+        transform: rotate(180deg);
+      }
+    </style>
   </head>
   <body>
     <!-- Botões Flutuantes - Navegação -->
@@ -89,11 +118,11 @@
 
       <!-- Navegação -->
       <!-- Objetivo -->
-      <div id="objetivo" class="section">
-        <h2 class="section-title">
+      <div id="objetivo" class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-bullseye-arrow"></i> Objetivo do Jogo
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <p>
             <strong>The Resistance: Avalon</strong> é um jogo de dedução social
             e lealdade oculta. Os jogadores são divididos em dois times
@@ -153,11 +182,11 @@
       </div>
 
       <!-- Preparação do Jogo -->
-      <div id="preparacao" class="section">
-        <h2 class="section-title">
+      <div id="preparacao" class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-cog"></i> Preparação do Jogo
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <h3 class="section-subtitle">Distribuição de Jogadores</h3>
           <p>
             Use a tabela abaixo para determinar quantos jogadores estarão em
@@ -317,9 +346,9 @@
       </div>
 
       <!-- Como Jogar -->
-      <div id="como-jogar" class="section">
-        <h2 class="section-title"><i class="fas fa-gamepad"></i> Como Jogar</h2>
-        <div class="section-content">
+      <div id="como-jogar" class="section accordion-section">
+        <h2 class="section-title accordion-header"><i class="fas fa-gamepad"></i> Como Jogar</h2>
+        <div class="section-content accordion-content">
           <p>O jogo consiste em várias rodadas. Cada rodada tem duas fases:</p>
 
           <h3 class="section-subtitle">1. Fase de Formação de Equipe</h3>
@@ -455,11 +484,11 @@
       </div>
 
       <!-- Personagens -->
-      <div id="personagens" class="section">
-        <h2 class="section-title">
+      <div id="personagens" class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-users"></i> Personagens Especiais
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <h3 class="section-subtitle">Personagens Obrigatórios</h3>
 
           <div class="character-card border-good">
@@ -662,11 +691,11 @@
       </div>
 
       <!-- Final do Jogo -->
-      <div id="final" class="section">
-        <h2 class="section-title">
+      <div id="final" class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-flag-checkered"></i> Final do Jogo
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <h3 class="section-subtitle">Condições de Vitória do BEM</h3>
           <div class="highlight-box">
             <ul class="list-custom">
@@ -762,11 +791,11 @@
       </div>
 
       <!-- Regras Opcionais Avançadas -->
-      <div id="regras-opcionais" class="section">
-        <h2 class="section-title">
+      <div id="regras-opcionais" class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-ballot-check"></i> Regras Opcionais Avançadas
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <p>
             As regras a seguir são <strong>opcionais</strong> e podem ser
             adicionadas ao jogo para aumentar a complexidade, estratégia e
@@ -1223,11 +1252,11 @@
       </div>
 
       <!-- Dicas Estratégicas -->
-      <div class="section">
-        <h2 class="section-title">
+      <div class="section accordion-section">
+        <h2 class="section-title accordion-header">
           <i class="fas fa-brain"></i> Dicas Estratégicas
         </h2>
-        <div class="section-content">
+        <div class="section-content accordion-content">
           <div class="tip-box">
             <h3 style="color: #ffd700; margin-top: 0">Para o BEM:</h3>
             <ul class="list-custom">
@@ -1361,6 +1390,49 @@
           if (!e.target.closest(".term-tooltip")) {
             tooltips.forEach((t) => t.classList.remove("active"));
           }
+        });
+
+        // Sistema de Accordion - Apenas uma seção aberta por vez
+        const accordionHeaders = document.querySelectorAll(".accordion-header");
+        const accordionContents = document.querySelectorAll(".accordion-content");
+        
+        // Fechar todas as seções no início, exceto a primeira
+        accordionContents.forEach((content, index) => {
+          if (index !== 0) {
+            content.style.display = "none";
+            content.style.maxHeight = "0";
+          }
+        });
+
+        accordionHeaders.forEach((header, index) => {
+          header.addEventListener("click", function (e) {
+            const parentSection = header.closest(".accordion-section");
+            const content = parentSection.querySelector(".accordion-content");
+
+            // Fechar todas as outras seções
+            accordionContents.forEach((otherContent) => {
+              if (otherContent !== content) {
+                otherContent.style.display = "none";
+                otherContent.style.maxHeight = "0";
+                otherContent.style.opacity = "0";
+                otherContent.style.transition = "all 0.3s ease";
+              }
+            });
+
+            // Toggle da seção atual
+            const isOpen = content.style.display !== "none";
+
+            if (isOpen) {
+              content.style.display = "none";
+              content.style.maxHeight = "0";
+              content.style.opacity = "0";
+            } else {
+              content.style.display = "block";
+              content.style.maxHeight = content.scrollHeight + "px";
+              content.style.opacity = "1";
+              content.style.transition = "all 0.3s ease";
+            }
+          });
         });
       });
     </script>
