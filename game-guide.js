@@ -76,14 +76,16 @@ AvalonApp.prototype.generateGameSteps = function (
         {
           type: "action",
           text: "A partir da 3ª rodada e em cada rodada seguinte, vire 1 carta do baralho de Lealdade",
-        },
-        {
-          type: "action",
-          text: "Se for Sem Mudança: Nada acontece, jogo continua",
-        },
-        {
-          type: "action",
-          text: "Se for Troca de Lado: Os dois Lancelots TROCAM DE LADO secretamente!",
+          subactions: [
+            {
+              type: "unordered",
+              text: "Se for uma carta vazia (Sem Mudança): Nada acontece, jogo continua",
+            },
+            {
+              type: "unordered",
+              text: "Se for uma carta de Troca de Lado: Os dois Lancelots TROCAM DE LADO secretamente!",
+            },
+          ],
         },
         {
           type: "note",
@@ -101,12 +103,12 @@ AvalonApp.prototype.generateGameSteps = function (
     title: "👑 Definição do Líder da Rodada",
     content: [
       {
-        type: "action",
-        text: "A liderança é alterada a cada rodada no sentido horário",
-      },
-      {
         type: "note",
         text: "O primeiro líder é decidido aleatoriamente no início do jogo",
+      },
+      {
+        type: "action",
+        text: "A liderança é alterada a cada rodada no sentido horário",
       },
     ],
     type: "mission",
@@ -130,6 +132,10 @@ AvalonApp.prototype.generateGameSteps = function (
         {
           type: "action",
           text: "Uma missão tentada não pode ser tentada novamente",
+        },
+        {
+          type: "note",
+          text: "A escolha da missão pode influenciar na aprovação ou não da equipe formada.",
         },
       ],
       type: "optional",
@@ -178,7 +184,7 @@ AvalonApp.prototype.generateGameSteps = function (
       content: [
         {
           type: "action",
-          text: "O líder dá Excalibur a UM membro da equipe (não pode ser ele mesmo)",
+          text: "O líder dá Excalibur a um membro da equipe (não pode manter com ele)",
         },
         {
           type: "action",
@@ -254,12 +260,21 @@ AvalonApp.prototype.generateGameSteps = function (
       title: "💧 Mulher do Lago",
       content: [
         {
+          type: "note",
+          text: "O token da Mulher do Lago começa com o jogador imediatamente à esquerda (sentido horário) do líder inicial.",
+        },
+        {
           type: "action",
           text: "Após a 2ª, 3ª e 4ª missões, o portador do token escolhe outro jogador para examinar",
         },
         {
           type: "action",
           text: "O jogador examinado recebe as 2 Cartas de Lealdade e passa secretamente a carta correspondente à sua lealdade",
+        },
+        {
+          type: "note",
+          text: "Passar a carta errada resulta em perda automática. Não é permitido blefar!",
+          indented: true,
         },
         {
           type: "action",
@@ -270,12 +285,8 @@ AvalonApp.prototype.generateGameSteps = function (
           text: "O jogador examinado recebe o token da Mulher do Lago",
         },
         {
-          type: "action",
-          text: "Um jogador que já usou a Mulher do Lago não pode ser examinado",
-        },
-        {
           type: "note",
-          text: "Passar a carta errada resulta em perda automática!",
+          text: "Um jogador que já usou a Mulher do Lago não pode ser examinado",
         },
       ],
       type: "optional",
@@ -306,6 +317,7 @@ AvalonApp.prototype.generateGameSteps = function (
 
   // ===== FINAL DO JOGO =====
 
+  // TENTATIVA DE ASSASSINATO - NOVO TIPO "assassination" com badge vermelho
   steps.push({
     number: stepNumber++,
     title: "💀 Tentativa de Assassinato",
@@ -331,10 +343,11 @@ AvalonApp.prototype.generateGameSteps = function (
         text: "Esta é a última chance do Mal! Merlin precisa ser sutil para o BEM vencer o jogo.",
       },
     ],
-    type: "endgame",
-    badges: ["Final"],
+    type: "assassination", // NOVO TIPO
+    badges: ["Assassinato"], // NOVO BADGE
   });
 
+  // CONDIÇÕES DE VITÓRIA - tipo "endgame" agora com badge dourado
   steps.push({
     number: stepNumber++,
     title: "🏆 Condições de Vitória",
@@ -371,7 +384,7 @@ AvalonApp.prototype.generateGameSteps = function (
       },
     ],
     type: "endgame",
-    badges: ["Final"],
+    badges: ["Final"], // Badge agora é dourado via CSS
   });
 
   return steps;
@@ -483,14 +496,11 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
             const noteDiv = document.createElement("div");
             noteDiv.className = "step-note-inline";
             noteDiv.style.fontStyle = "italic";
-            noteDiv.style.color = "#ffb84d";
             noteDiv.style.marginTop = "8px";
             noteDiv.style.marginBottom = "8px";
             // Se indented for true, adiciona margem de 25px; senão, 0
             noteDiv.style.marginLeft = item.indented ? "25px" : "0";
             noteDiv.style.padding = "8px 12px";
-            noteDiv.style.background = "rgba(255, 184, 77, 0.1)";
-            noteDiv.style.borderLeft = "3px solid #ffb84d";
             noteDiv.style.borderRadius = "4px";
             noteDiv.innerHTML = `<i class="fas fa-info-circle"></i> ${item.text}`;
 
@@ -549,14 +559,11 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
             const noteDiv = document.createElement("div");
             noteDiv.className = "step-note-inline";
             noteDiv.style.fontStyle = "italic";
-            noteDiv.style.color = "#ffb84d";
             noteDiv.style.marginTop = "8px";
             noteDiv.style.marginBottom = "8px";
             // Se indented for true, adiciona margem de 25px; senão, mantém no nível da ação (25px base)
             noteDiv.style.marginLeft = item.indented ? "50px" : "25px";
             noteDiv.style.padding = "8px 12px";
-            noteDiv.style.background = "rgba(255, 184, 77, 0.1)";
-            noteDiv.style.borderLeft = "3px solid #ffb84d";
             noteDiv.style.borderRadius = "4px";
             noteDiv.innerHTML = `<i class="fas fa-info-circle"></i> ${item.text}`;
             contentDiv.appendChild(noteDiv);
@@ -587,7 +594,6 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
         const noteDiv = document.createElement("div");
         noteDiv.className = "step-description";
         noteDiv.style.fontStyle = "italic";
-        noteDiv.style.color = "#ffb84d";
         noteDiv.style.marginTop = "8px";
         noteDiv.style.marginLeft = "25px"; // Alinhamento consistente
         noteDiv.innerHTML = `<i class="fas fa-info-circle"></i> ${step.note}`;
@@ -609,6 +615,7 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
           Revelação: "badge-revelation",
           Missão: "badge-mission",
           Opcional: "badge-optional",
+          Assassinato: "badge-assassination", // NOVO BADGE
           Final: "badge-endgame",
         };
 

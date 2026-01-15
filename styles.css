@@ -2036,7 +2036,7 @@ body {
 }
 
 .game-step.step-endgame {
-  border-left: 4px solid #dc143c;
+  border-left: 4px solid #ffd700;
 }
 
 /* Sub-etapas (aninhadas) */
@@ -2183,4 +2183,70 @@ body {
     height: 35px;
     font-size: 1em;
   }
+}
+
+/* ===== BADGES - ATUALIZAÇÕES ===== */
+
+/* Badge de Assassinato (novo - vermelho) */
+.badge-assassination {
+  background: rgba(220, 20, 60, 0.2);
+  color: #ff6282;
+  border: 1px solid #dc143c;
+}
+
+/* Badge Final (atualizado para dourado - vitória) */
+.badge-endgame {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 1px solid #b8860b;
+}
+
+/* ===== NOTAS COM CORES BASEADAS NO TIPO DA ETAPA ===== */
+
+/* Notas em etapas de Setup */
+.game-step.step-setup .step-note-inline {
+  color: #82a1fd !important;
+  background: rgba(65, 105, 225, 0.1) !important;
+  border-left-color: #4169e1 !important;
+}
+
+/* Notas em etapas de Revelation */
+.game-step.step-revelation .step-note-inline {
+  color: #c08fff !important;
+  background: rgba(138, 43, 226, 0.1) !important;
+  border-left-color: #9370db !important;
+}
+
+/* Notas em etapas de Mission */
+.game-step.step-mission .step-note-inline {
+  color: #ffb84d !important;
+  background: rgba(255, 165, 0, 0.1) !important;
+  border-left-color: #ff9500 !important;
+}
+
+/* Notas em etapas Optional */
+.game-step.step-optional .step-note-inline {
+  color: #33ccff !important;
+  background: rgba(0, 195, 255, 0.1) !important;
+  border-left-color: #0099ff !important;
+}
+
+/* Notas em etapas de Assassination */
+.game-step.step-assassination .step-note-inline {
+  color: #ff6282 !important;
+  background: rgba(220, 20, 60, 0.1) !important;
+  border-left-color: #dc143c !important;
+}
+
+/* Notas em etapas de Endgame */
+.game-step.step-endgame .step-note-inline {
+  color: #ffd700 !important;
+  background: rgba(255, 215, 0, 0.1) !important;
+  border-left-color: #b8860b !important;
+}
+
+/* ===== BORDA LATERAL DAS ETAPAS ===== */
+
+.game-step.step-assassination {
+  border-left: 4px solid #dc143c;
 }
