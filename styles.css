@@ -1142,7 +1142,7 @@ body {
   border-radius: 5px;
 }
 
-.warning-box {
+.evil-box {
   background: rgba(220, 20, 60, 0.15);
   border-left: 4px solid #dc143c;
   padding: 15px 20px;
@@ -1150,9 +1150,17 @@ body {
   border-radius: 5px;
 }
 
+.warning-box {
+  background: rgba(220, 133, 20, 0.15);
+  border-left: 4px solid #dc6e14;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
 .tip-box {
-  background: rgba(255, 215, 0, 0.1);
-  border-left: 4px solid #ffd700;
+  background: rgba(0, 195, 255, 0.1);
+  border-left: 4px solid #0099ff;
   padding: 15px 20px;
   margin: 20px 0;
   border-radius: 5px;

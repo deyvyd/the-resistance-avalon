@@ -513,10 +513,10 @@ class AvalonApp {
     // Atualizar títulos das seções
     document.getElementById(
       "goodRolesTitle"
-    ).innerHTML = `⚔️ Forças do Bem <span style="color: white;">→ ${totalGood} Personagens</span>`;
+    ).innerHTML = `⚔️ Forças do Bem <span style="color: #ffe396;">→</span> <span style="color: white;">${totalGood} Personagens</span>`;
     document.getElementById(
       "evilRolesTitle"
-    ).innerHTML = `🗡️ Forças do Mal <span style="color: white;">→ ${totalEvil} Personagens</span>`;
+    ).innerHTML = `🗡️ Forças do Mal <span style="color: #ffe396;">→</span> <span style="color: white;">${totalEvil} Personagens</span>`;
 
     // Sempre habilitar botão de iniciar (times sempre completos)
     const startBtn = document.getElementById("startBtn");
