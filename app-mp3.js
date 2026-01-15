@@ -618,7 +618,13 @@ class AvalonApp {
 
     // Esconder título e interface de configuração
     document.querySelector(".game-title").style.display = "none";
-    document.getElementById("settingsBtnMain").style.display = "none";
+
+    // Esconder botões flutuantes durante a narração
+    const floatingButtons = document.querySelector(".floating-buttons");
+    if (floatingButtons) {
+      floatingButtons.style.display = "none";
+    }
+
     document
       .querySelectorAll(".section, .action-buttons")
       .forEach((el) => (el.style.display = "none"));
@@ -824,7 +830,13 @@ class AvalonApp {
 
     // Mostrar título e interface de configuração novamente
     document.querySelector(".game-title").style.display = "block";
-    document.getElementById("settingsBtnMain").style.display = "block";
+
+    // Mostrar botões flutuantes novamente
+    const floatingButtons = document.querySelector(".floating-buttons");
+    if (floatingButtons) {
+      floatingButtons.style.display = "flex";
+    }
+
     document
       .querySelectorAll(".section, .action-buttons")
       .forEach((el) => (el.style.display = "block"));
