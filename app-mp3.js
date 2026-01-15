@@ -1090,7 +1090,7 @@ class AvalonApp {
 
     // Música da tela de seleção
     this.selectionMusic = new Audio(
-      "src/assets/audios/background-selection.mp3"
+      "src/assets/audios/soundtrack-selection.mp3"
     );
     this.selectionMusic.loop = true;
     this.selectionMusic.volume = this.settings.musicVolume;
@@ -1187,7 +1187,7 @@ class AvalonApp {
   initNarrationMusic() {
     // Música da narração
     this.narrationMusic = new Audio(
-      "src/assets/audios/background-narration.mp3"
+      "src/assets/audios/soundtrack-narration.mp3"
     );
     this.narrationMusic.loop = true;
     this.narrationMusic.volume = this.settings.musicVolume;
