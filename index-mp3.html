@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avalon - Mestre do Jogo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="src/assets/fontawesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Título Principal -->
+    <div class="game-title">
+      <h2 class="sub-title">THE RESISTANCE</h2>
+      <h1 class="main-title">AVALON</h1>
+      <button
+        id="settingsBtnMain"
+        class="settings-btn-main"
+        onclick="app.openSettings()"
+      >
+        <i class="fas fa-cog"></i>
+      </button>
+    </div>
+
+    <div class="container">
+      <!-- Seletor de Número de Jogadores -->
+      <div class="section">
+        <h2 class="section-title">Número de Jogadores</h2>
+        <div class="player-selector" id="playerSelector"></div>
+      </div>
+
+      <!-- Papéis do Bem -->
+      <div class="section">
+        <h2 class="section-title" id="goodRolesTitle">Forças do Bem ⚔️</h2>
+        <div class="role-grid" id="goodRoles"></div>
+      </div>
+
+      <!-- Papéis do Mal -->
+      <div class="section">
+        <h2 class="section-title" id="evilRolesTitle">Forças do Mal 🗡️</h2>
+        <div class="role-grid" id="evilRoles"></div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="action-buttons">
+        <button class="btn btn-reset" id="resetBtn" onclick="app.resetRoles()">
+          <i class="fas fa-redo-alt"></i> Resetar
+        </button>
+        <button
+          class="btn btn-start"
+          id="startBtn"
+          onclick="app.startNarration()"
+          disabled
+        >
+          <i class="fas fa-play"></i> Iniciar Narração
+        </button>
+      </div>
+
+      <!-- Player de Áudio -->
+      <div class="audio-player" id="audioPlayer" style="display: none">
+        <!-- Cabeçalho com botão de configurações -->
+        <div class="narration-header">
+          <h3 class="audio-step" id="audioStep">Etapa 1 de X</h3>
+          <button
+            id="settingsBtnNarration"
+            class="settings-btn-icon"
+            onclick="app.openSettings()"
+            style="display: none"
+          >
+            <i class="fas fa-cog"></i>
+          </button>
+        </div>
+
+        <div class="audio-text" id="audioText">Preparando narração...</div>
+
+        <!-- Contador de Pausa -->
+        <div class="pause-counter" id="pauseCounter">
+          <i class="fal fa-clock"></i>
+          <span>Pausa:</span>
+          <span id="pauseSeconds">5</span>
+          <span>segundos</span>
+        </div>
+
+        <!-- Grid de Controles (3 colunas) -->
+        <div class="playback-controls-grid">
+          <!-- ESQUERDA: Volume Narração -->
+          <div class="narration-volume">
+            <i class="fal fa-microphone"></i>
+            <input
+              type="range"
+              min="50"
+              max="150"
+              value="100"
+              id="narrationVolumeQuick"
+              oninput="app.updateNarrationVolumeQuick(this.value)"
+            />
+            <span id="volumeDisplayQuick">100%</span>
+          </div>
+
+          <!-- CENTRO: Controles de Navegação -->
+          <div class="audio-controls">
+            <button
+              class="control-btn"
+              id="prevBtn"
+              onclick="app.previousAudio()"
+              disabled
+            >
+              <i class="fas fa-step-backward"></i>
+            </button>
+            <button
+              class="control-btn control-btn-main"
+              id="playPauseBtn"
+              onclick="app.togglePlayPause()"
+            >
+              <i class="fas fa-pause"></i>
+            </button>
+            <button class="control-btn" id="nextBtn" onclick="app.nextAudio()">
+              <i class="fas fa-step-forward"></i>
+            </button>
+          </div>
+
+          <!-- DIREITA: Toggle Música -->
+          <div class="music-toggle-container">
+            <button
+              class="music-toggle-btn active"
+              id="musicToggle"
+              onclick="app.toggleMusic()"
+            >
+              <i class="fas fa-music"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="btn btn-close" onclick="app.stopNarration()">
+          <i class="fas fa-times"></i> Encerrar Narração
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal de Configurações -->
+    <div id="settingsModal" class="modal" style="display: none">
+      <div class="modal-backdrop" onclick="app.closeSettings()"></div>
+      <div class="modal-content">
+        <h2 class="modal-title">⚙️ CONFIGURAÇÕES</h2>
+
+        <!-- Música de Fundo (unificado) -->
+        <div class="setting-item">
+          <label class="setting-label">
+            <i class="fal fa-music" id="musicIconModal"></i> Música de Fundo
+          </label>
+          <div class="music-control-unified">
+            <button
+              class="music-toggle-modal active"
+              id="musicToggleModal"
+              onclick="app.toggleMusicFromModal()"
+            >
+              <i class="far fa-music-slash"></i>
+            </button>
+            <div class="slider-container">
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="15"
+                id="musicVolumeSetting"
+                oninput="app.updateSettingPreview()"
+              />
+              <span id="musicVolumeDisplay" class="slider-value">15%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volume Narração -->
+        <div class="setting-item">
+          <label class="setting-label">
+            <i class="fal fa-microphone"></i> Volume da Narração
+          </label>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="50"
+              max="150"
+              value="100"
+              id="narrationVolumeSetting"
+              oninput="app.updateSettingPreview()"
+            />
+            <span id="narrationVolumeDisplay" class="slider-value">100%</span>
+          </div>
+          <p class="setting-hint">50% - 150%</p>
+        </div>
+
+        <!-- Timer: Ações de personagem -->
+        <div class="setting-item">
+          <label class="setting-label">
+            <i class="fal fa-clock"></i> Timer: Ações de personagem
+          </label>
+          <div class="slider-container">
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value="5"
+              id="pauseDurationSetting"
+              oninput="app.updateSettingPreview()"
+            />
+            <span id="pauseDurationDisplay" class="slider-value">5s</span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="app.saveSettings()">
+            <i class="fas fa-check"></i> Salvar
+          </button>
+          <button class="btn btn-reset" onclick="app.resetSettingsPreview()">
+            <i class="fas fa-undo"></i> Restaurar Padrões
+          </button>
+          <button class="btn btn-secondary" onclick="app.closeSettings()">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app-mp3.js"></script>
+  </body>
+</html>

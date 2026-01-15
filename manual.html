@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual - The Resistance: AVALON</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="src/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="src/assets/fontawesome/css/all.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navegação Lateral Suspensa -->
+    <div class="side-nav">
+      <a href="#objetivo" class="side-nav-btn">
+        <i class="fas fa-trophy"></i> Objetivo
+      </a>
+      <a href="#preparacao" class="side-nav-btn">
+        <i class="fas fa-cog"></i> Preparação
+      </a>
+      <a href="#como-jogar" class="side-nav-btn">
+        <i class="fas fa-gamepad"></i> Como Jogar
+      </a>
+      <a href="#personagens" class="side-nav-btn">
+        <i class="fas fa-users"></i> Personagens
+      </a>
+      <a href="#final" class="side-nav-btn">
+        <i class="fas fa-flag-checkered"></i> Final do Jogo
+      </a>
+      <a href="#regras-opcionais" class="side-nav-btn">
+        <i class="fas fa-star"></i> Regras Opcionais
+      </a>
+      <a
+        href="index-mp3.html"
+        class="side-nav-btn"
+        style="margin-top: 10px; border-color: #4169e1"
+      >
+        <i class="fas fa-arrow-left"></i> Voltar ao Jogo
+      </a>
+    </div>
+
+    <div class="manual-container">
+      <!-- Cabeçalho -->
+      <div class="game-title">
+        <div
+          style="
+            font-family: 'Cinzel', serif;
+            font-size: 1.5em;
+            color: #b8956a;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+          "
+        >
+          THE RESISTANCE
+        </div>
+        <h1
+          style="
+            font-family: 'Cinzel', serif;
+            font-size: 4em;
+            color: #ffd700;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            letter-spacing: 5px;
+            line-height: 1;
+          "
+        >
+          AVALON
+        </h1>
+        <div
+          style="
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 8px;
+            display: inline-block;
+          "
+        >
+          <p class="manual-subtitle" style="margin: 0">MANUAL DE REGRAS</p>
+        </div>
+      </div>
+
+      <!-- Navegação -->
+      <!-- Objetivo -->
+      <div id="objetivo" class="section">
+        <h2 class="section-title">
+          <i class="fas fa-trophy"></i> Objetivo do Jogo
+        </h2>
+        <div class="section-content">
+          <p>
+            <strong>The Resistance: Avalon</strong> é um jogo de dedução social
+            e lealdade oculta. Os jogadores são divididos em dois times
+            secretos:
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              <strong class="character-team-good"
+                ><i class="fas fa-shield-alt"></i>
+                <span class="term-tooltip"
+                  >Servos de Arthur
+                  <span class="tooltip-text">Loyal Servants of Arthur</span>
+                </span>
+                (BEM)
+              </strong>
+            </p>
+            <p>
+              Lutam pela bondade e honra. Vencem completando
+              <strong>3 missões com sucesso</strong>.
+            </p>
+          </div>
+
+          <div class="warning-box">
+            <p>
+              <strong class="character-team-evil"
+                ><i class="fas fa-skull-crossbones"></i>
+                <span class="term-tooltip"
+                  >Minions de Mordred
+                  <span class="tooltip-text">Minions of Mordred</span>
+                </span>
+                (MAL)
+              </strong>
+            </p>
+            <p>
+              Alinhados com as forças do mal. Vencem se
+              <strong>3 missões falharem</strong>, ou assassinando Merlin, ou se
+              5 times consecutivos forem rejeitados.
+            </p>
+          </div>
+
+          <p>
+            Durante o jogo, os jogadores podem fazer
+            <strong>qualquer afirmação</strong>, a qualquer momento. Discussão,
+            enganação, acusação e dedução lógica são fundamentais para a vitória
+            de qualquer lado.
+          </p>
+
+          <div class="tip-box">
+            <p>
+              <i class="fas fa-lightbulb"></i>
+              <strong>Dica Importante:</strong> Mesmo um único jogador do mal em
+              uma equipe é suficiente para sabotar uma missão!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preparação do Jogo -->
+      <div id="preparacao" class="section">
+        <h2 class="section-title">
+          <i class="fas fa-cog"></i> Preparação do Jogo
+        </h2>
+        <div class="section-content">
+          <h3 class="section-subtitle">Distribuição de Jogadores</h3>
+          <p>
+            Use a tabela abaixo para determinar quantos jogadores estarão em
+            cada time:
+          </p>
+
+          <div class="table-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th>Jogadores</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="good-row">
+                  <td style="font-weight: bold">Bem (Azul)</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>6</td>
+                </tr>
+                <tr class="evil-row">
+                  <td style="font-weight: bold">Mal (Vermelho)</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 class="section-subtitle">Tamanho das Equipes por Missão</h3>
+          <div class="table-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th>Missão</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>10</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1ª Missão</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>2ª Missão</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>3ª Missão</td>
+                  <td>2</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>4</td>
+                </tr>
+                <tr style="background: rgba(220, 20, 60, 0.15)">
+                  <td>4ª Missão *</td>
+                  <td>3</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>5ª Missão</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>5</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <em
+              >* A 4ª missão com 7+ jogadores requer
+              <strong>2 cartas de falha</strong> para falhar.</em
+            >
+          </p>
+
+          <h3 class="section-subtitle">
+            Revelação Inicial: O Mal se Reconhece
+          </h3>
+          <p>
+            Após todos os jogadores conhecerem suas cartas secretas, o Líder
+            deve conduzir a seguinte sequência para que os jogadores do mal se
+            reconheçam e Merlin identifique os vilões:
+          </p>
+
+          <div class="script-box">
+            <p>
+              "Todos, fechem os olhos e estendam a mão em punho na frente de
+              vocês"
+            </p>
+            <p class="color-evil">
+              "Minions de Mordred, abram os olhos e olhem ao redor para conhecer
+              todos os agentes do mal"
+            </p>
+            <p class="color-evil">"Minions de Mordred, fechem os olhos"</p>
+            <p>"Todos devem estar com os olhos fechados e mãos em punho"</p>
+            <p class="color-evil">
+              "Minions de Mordred, estendam o polegar para que Merlin saiba quem
+              vocês são"
+            </p>
+            <p class="color-good">
+              "Merlin, abra os olhos e veja os agentes do mal"
+            </p>
+            <p class="color-evil">
+              "Minions de Mordred, abaixem o polegar e formem o punho novamente"
+            </p>
+            <p class="color-good">"Merlin, feche os olhos"</p>
+            <p>"Todos devem estar com os olhos fechados e mãos em punho"</p>
+            <p>"Todos, abram os olhos"</p>
+          </div>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>Importante:</strong> Os jogadores do mal se conhecem entre
+              si, mas Merlin não pode revelar que sabe quem são os vilões, ou
+              tudo estará perdido!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Como Jogar -->
+      <div id="como-jogar" class="section">
+        <h2 class="section-title"><i class="fas fa-gamepad"></i> Como Jogar</h2>
+        <div class="section-content">
+          <p>O jogo consiste em várias rodadas. Cada rodada tem duas fases:</p>
+
+          <h3 class="section-subtitle">1. Fase de Formação de Equipe</h3>
+          <ul class="list-custom">
+            <li>
+              O <strong>Líder</strong> propõe uma equipe para completar a missão
+            </li>
+            <li>
+              Todos os jogadores <strong>discutem</strong> a proposta (discussão
+              é fundamental!)
+            </li>
+            <li>
+              Cada jogador vota secretamente usando seus
+              <strong>Tokens de Voto</strong>:
+            </li>
+            <li style="padding-left: 40px">
+              •
+              <span class="term-tooltip"
+                >Aprovar<span class="tooltip-text">Approve</span></span
+              >
+              - aceitar a equipe proposta
+            </li>
+            <li style="padding-left: 40px">
+              •
+              <span class="term-tooltip"
+                >Rejeitar<span class="tooltip-text">Reject</span></span
+              >
+              - recusar a equipe proposta
+            </li>
+            <li>Os votos são revelados simultaneamente</li>
+            <li>
+              Se a <strong>maioria aprovar</strong>, a equipe vai para a missão
+            </li>
+            <li>
+              Se for rejeitada, a liderança passa para o próximo jogador
+              (sentido horário)
+            </li>
+          </ul>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-exclamation-circle"></i>
+              <strong>Atenção:</strong> Se 5 equipes consecutivas forem
+              rejeitadas na mesma rodada, o
+              <strong>Mal vence automaticamente</strong>!
+            </p>
+          </div>
+
+          <div class="tip-box">
+            <p>
+              <i class="fas fa-user-secret"></i>
+              <strong>Estratégia:</strong> Não confie em todo mundo! Rejeitar
+              uma equipe NÃO significa que você é do mal. Jogadores experientes
+              costumam rejeitar várias equipes antes de aprovar uma. Observe
+              quem aprova e pergunte o motivo!
+            </p>
+          </div>
+
+          <h3 class="section-subtitle">2. Fase da Missão</h3>
+          <ul class="list-custom">
+            <li>
+              Cada membro da equipe aprovada recebe
+              <strong>Cartas de Missão</strong>:
+            </li>
+            <li style="padding-left: 40px">
+              •
+              <span class="term-tooltip"
+                >Sucesso<span class="tooltip-text">Success</span></span
+              >
+            </li>
+            <li style="padding-left: 40px">
+              •
+              <span class="term-tooltip"
+                >Falha<span class="tooltip-text">Fail</span></span
+              >
+            </li>
+            <li>
+              Cada um escolhe <strong>secretamente</strong> uma carta e joga
+              virada para baixo
+            </li>
+            <li>O Líder embaralha e revela as cartas jogadas</li>
+            <li>
+              A missão é <strong>SUCESSO</strong> apenas se TODAS as cartas
+              forem de sucesso
+            </li>
+            <li>
+              A missão <strong>FALHA</strong> se houver uma ou mais cartas de
+              falha
+            </li>
+          </ul>
+
+          <div class="highlight-box">
+            <p><strong>Regras Importantes:</strong></p>
+            <ul class="list-custom">
+              <li>
+                Jogadores do <strong>BEM</strong> devem sempre jogar
+                <span class="term-tooltip"
+                  >Sucesso<span class="tooltip-text">Success</span></span
+                >
+              </li>
+              <li>
+                Jogadores do <strong>MAL</strong> podem escolher
+                <span class="term-tooltip"
+                  >Sucesso<span class="tooltip-text">Success</span></span
+                >
+                ou
+                <span class="term-tooltip"
+                  >Falha<span class="tooltip-text">Fail</span></span
+                >
+                (para enganar!)
+              </li>
+              <li>
+                <strong>Exceção:</strong> Na 4ª missão com 7+ jogadores, são
+                necessárias
+                <strong
+                  >2 cartas
+                  <span class="term-tooltip"
+                    >Falha<span class="tooltip-text">Fail</span></span
+                  ></strong
+                >
+                para a missão falhar
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="section-subtitle">Progressão do Jogo</h3>
+          <p>
+            Após cada missão (sucesso ou falha), marque o resultado no tabuleiro
+            e passe a liderança para o próximo jogador. O jogo continua até que
+            um lado vença.
+          </p>
+        </div>
+      </div>
+
+      <!-- Personagens -->
+      <div id="personagens" class="section">
+        <h2 class="section-title">
+          <i class="fas fa-users"></i> Personagens Especiais
+        </h2>
+        <div class="section-content">
+          <h3 class="section-subtitle">Personagens Obrigatórios</h3>
+
+          <div class="character-card border-good">
+            <div class="character-name color-good">
+              <i class="fas fa-hat-wizard"></i> MERLIN -
+              <span class="character-team-good">BEM</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> Sabe quem são TODOS os jogadores do mal
+              (exceto Mordred, se estiver em jogo).
+            </p>
+            <p>
+              <strong>Desafio:</strong> Deve guiar o bem sem revelar sua
+              identidade, ou será assassinado!
+            </p>
+            <p><strong>Usado em:</strong> Todos os jogos (obrigatório)</p>
+          </div>
+
+          <div class="character-card border-evil">
+            <div class="character-name color-evil">
+              <i class="fas fa-skull"></i> Assassino -
+              <span class="character-team-evil">MAL</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> Se o bem vencer 3 missões, o
+              <span class="term-tooltip"
+                >Assassino<span class="tooltip-text">Assassin</span></span
+              >
+              pode tentar adivinhar quem é Merlin.
+            </p>
+            <p>
+              <strong>Vitória:</strong> Se acertar, mata Merlin e o mal vence
+              mesmo após 3 sucessos!
+            </p>
+            <p><strong>Usado em:</strong> Todos os jogos (obrigatório)</p>
+          </div>
+
+          <h3 class="section-subtitle">Personagens Opcionais</h3>
+
+          <div class="character-card border-good">
+            <div class="character-name color-good">
+              <i class="fas fa-shield"></i> PERCIVAL -
+              <span class="character-team-good">BEM</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> Sabe quem é Merlin (ou quem parece ser
+              Merlin se Morgana estiver em jogo).
+            </p>
+            <p><strong>Objetivo:</strong> Proteger a identidade de Merlin.</p>
+            <p><strong>Efeito:</strong> Fortalece o Bem</p>
+            <p>
+              <em
+                >Nota: Em jogos de 5 jogadores com Percival, adicione Mordred OU
+                Morgana para balancear.</em
+              >
+            </p>
+          </div>
+
+          <div class="character-card border-evil">
+            <div class="character-name color-evil">
+              <i class="fas fa-user-ninja"></i> MORDRED -
+              <span class="character-team-evil">MAL</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> Sua identidade NÃO é revelada para Merlin
+              no início do jogo.
+            </p>
+            <p>
+              <strong>Estratégia:</strong> Pode fingir ser do bem sem Merlin
+              saber.
+            </p>
+            <p><strong>Efeito:</strong> Fortalece o Mal</p>
+          </div>
+
+          <div class="character-card border-evil">
+            <div class="character-name color-evil">
+              <i class="fas fa-ghost"></i> OBERON -
+              <span class="character-team-evil">MAL</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> NÃO se revela para os outros jogadores do
+              mal, nem os conhece.
+            </p>
+            <p>
+              <strong>Desafio:</strong> Está isolado, mas Merlin o vê (não sabe
+              que os outros não o conhecem).
+            </p>
+            <p>
+              <strong>Efeito:</strong> Fortalece o Bem (dificulta coordenação do
+              mal)
+            </p>
+            <p>
+              <em
+                >Nota: Oberon não é um "Minion of Mordred" (Minion de Mordred) e
+                não abre os olhos durante a revelação inicial.</em
+              >
+            </p>
+          </div>
+
+          <div class="character-card border-evil">
+            <div class="character-name color-evil">
+              <i class="fas fa-magic"></i> MORGANA -
+              <span class="character-team-evil">MAL</span>
+            </div>
+            <p>
+              <strong>Poder:</strong> Aparece para Percival como se fosse
+              Merlin.
+            </p>
+            <p>
+              <strong>Confusão:</strong> Percival vê duas pessoas e não sabe
+              qual é o verdadeiro Merlin.
+            </p>
+            <p><strong>Efeito:</strong> Fortalece o Mal</p>
+          </div>
+
+          <div class="character-card border-lancelots">
+            <div class="character-name">
+              <span class="color-good"
+                ><i class="fas fa-shield"></i> LANCELOT BOM</span
+              >
+              <span style="color: #ffffff">E</span>
+              <span class="color-evil"
+                ><i class="fas fa-sword"></i> LANCELOT MAL</span
+              >
+            </div>
+            <p>
+              <strong>Nomes nas cartas:</strong>
+              <span class="term-tooltip"
+                >Lancelot Bom<span class="tooltip-text"
+                  >Good Lancelot</span
+                ></span
+              >
+              e
+              <span class="term-tooltip"
+                >Lancelot Mal<span class="tooltip-text"
+                  >Evil Lancelot</span
+                ></span
+              >
+            </p>
+            <p>
+              <strong>Mecânica:</strong> Se adicionar
+              <span class="term-tooltip"
+                >Lancelot Bom<span class="tooltip-text"
+                  >Good Lancelot</span
+                ></span
+              >, DEVE adicionar
+              <span class="term-tooltip"
+                >Lancelot Mal<span class="tooltip-text"
+                  >Evil Lancelot</span
+                ></span
+              >
+              (só é possível jogar com os 2 ou nenhum).
+            </p>
+            <p>
+              <strong>Efeito:</strong> Adiciona complexidade e incerteza ao
+              jogo.
+            </p>
+            <p>
+              <em
+                ><a style="color: #ffeb7a" href="#lancelots"
+                  >Veja seção de Regras Opcionais para as 3 variantes de
+                  Lancelot.</a
+                ></em
+              >
+            </p>
+          </div>
+
+          <h3 class="section-subtitle">Revelação com Personagens Opcionais</h3>
+          <p>
+            Quando usar personagens opcionais, a sequência de revelação muda:
+          </p>
+
+          <div class="script-box">
+            <p>"Todos, fechem os olhos e estendam a mão em punho"</p>
+            <p class="color-evil">
+              "Minions de Mordred, <strong>exceto Oberon</strong>, abram os
+              olhos e se reconheçam"
+            </p>
+            <p class="color-evil">"Minions de Mordred, fechem os olhos"</p>
+            <p>"Todos com olhos fechados e mãos em punho"</p>
+            <p class="color-evil">
+              "Minions de Mordred, <strong>exceto Mordred</strong>, estendam o
+              polegar para Merlin"
+            </p>
+            <p class="color-good">"Merlin, abra os olhos e veja o mal"</p>
+            <p class="color-evil">"Minions, abaixem o polegar"</p>
+            <p class="color-good">"Merlin, feche os olhos"</p>
+            <p>"Todos com olhos fechados"</p>
+            <p class="color-purple">
+              "Merlin e Morgana, estendam o polegar para Percival"
+            </p>
+            <p class="color-purple">
+              "Percival, abra os olhos e veja Merlin e Morgana"
+            </p>
+            <p class="color-purple">"Merlin e Morgana, abaixem o polegar"</p>
+            <p class="color-purple">"Percival, feche os olhos"</p>
+            <p>"Todos abram os olhos"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Final do Jogo -->
+      <div id="final" class="section">
+        <h2 class="section-title">
+          <i class="fas fa-flag-checkered"></i> Final do Jogo
+        </h2>
+        <div class="section-content">
+          <h3 class="section-subtitle">Condições de Vitória do BEM</h3>
+          <div class="highlight-box">
+            <ul class="list-custom">
+              <li><strong>3 missões completadas com sucesso</strong></li>
+              <li>
+                <strong>E</strong> Merlin não for assassinado (ou o Assassino
+                errar)
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="section-subtitle">Condições de Vitória do MAL</h3>
+          <div class="warning-box">
+            <ul class="list-custom">
+              <li><strong>3 missões falharem</strong>, OU</li>
+              <li>
+                <strong>5 equipes consecutivas serem rejeitadas</strong> na
+                mesma rodada, OU
+              </li>
+              <li>
+                <strong>Assassinar Merlin</strong> corretamente após 3 sucessos
+                do bem
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="section-subtitle">Tentativa de Assassinato</h3>
+          <p>
+            Se o Bem completar 3 missões com sucesso, o jogo NÃO termina
+            imediatamente! Os jogadores do mal têm uma última chance:
+          </p>
+
+          <div class="tip-box">
+            <p><strong>Procedimento:</strong></p>
+            <ol style="list-style-position: inside; padding-left: 20px">
+              <li>
+                Os jogadores do mal discutem entre si (sem revelar cartas)
+              </li>
+              <li>
+                O jogador com a carta de <strong>Assassino</strong> aponta para
+                um jogador do bem
+              </li>
+              <li>
+                Se for Merlin →
+                <strong class="character-team-evil">MAL VENCE!</strong>
+              </li>
+              <li>
+                Se não for Merlin →
+                <strong class="character-team-good">BEM VENCE!</strong>
+              </li>
+            </ol>
+          </div>
+
+          <div class="highlight-box">
+            <p>
+              <i class="fas fa-crown"></i> <strong>Dica Final:</strong> Merlin
+              deve ajudar o bem de forma sutil, usando votos e comentários
+              discretos. Se for óbvio demais, será facilmente identificado e
+              assassinado!
+            </p>
+          </div>
+
+          <h3 class="section-subtitle">Resumo das Vitórias</h3>
+          <div class="table-wrapper">
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th style="background: rgba(65, 105, 225, 0.3)">
+                    BEM Vence Se...
+                  </th>
+                  <th style="background: rgba(220, 20, 60, 0.3)">
+                    MAL Vence Se...
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3 missões bem-sucedidas + Merlin sobreviver</td>
+                  <td>3 missões falharem</td>
+                </tr>
+                <tr>
+                  <td>Assassino errar ao tentar matar Merlin</td>
+                  <td>Assassinar Merlin corretamente</td>
+                </tr>
+                <tr>
+                  <td>-</td>
+                  <td>5 times rejeitados consecutivamente</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regras Opcionais Avançadas -->
+      <div id="regras-opcionais" class="section">
+        <h2 class="section-title">
+          <i class="fas fa-star"></i> Regras Opcionais Avançadas
+        </h2>
+        <div class="section-content">
+          <p>
+            As regras a seguir são <strong>opcionais</strong> e podem ser
+            adicionadas ao jogo para aumentar a complexidade, estratégia e
+            diversão. Recomenda-se jogar algumas partidas com as regras básicas
+            antes de adicionar estas variantes.
+          </p>
+
+          <h3 class="section-subtitle">
+            <i class="fas fa-crosshairs"></i> Targeting (Segmentação de Missões)
+          </h3>
+          <p>
+            A variante <strong>Targeting</strong> permite aos jogadores
+            completar as missões em <strong>qualquer ordem</strong>, adicionando
+            um nível de planejamento estratégico ao jogo.
+          </p>
+
+          <div class="highlight-box">
+            <p><strong>Como Funciona:</strong></p>
+            <ul class="list-custom">
+              <li>Durante a Fase de Formação de Equipe, o Líder escolhe:</li>
+              <li>1. <strong>Quais jogadores</strong> estarão na equipe</li>
+              <li>
+                2. <strong>Qual missão</strong> a equipe tentará completar
+              </li>
+              <li>
+                Use o marcador de rodada para indicar qual missão foi
+                selecionada
+              </li>
+              <li>
+                O número de jogadores na equipe deve corresponder ao requisito
+                da missão escolhida
+              </li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <p><strong>Exemplo:</strong></p>
+            <p>
+              Jogo com 8 jogadores. O líder decide começar pela
+              <strong>3ª missão</strong>, que requer 4 membros. O líder escolhe
+              4 jogadores para a equipe e coloca o marcador de rodada na 3ª
+              missão antes de pedir a votação.
+            </p>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>Regras Importantes:</strong></p>
+            <ul class="list-custom">
+              <li>
+                A <strong>5ª missão</strong> só pode ser tentada após pelo menos
+                2 outras missões serem completadas com sucesso
+              </li>
+              <li>
+                Uma missão tentada
+                <strong>não pode ser tentada novamente</strong>
+              </li>
+              <li>
+                Para 7+ jogadores, a <strong>4ª missão</strong> ainda requer 2
+                cartas Fail (Falha) para falhar
+              </li>
+              <li>
+                Após a missão, coloque o marcador de pontuação correspondente no
+                espaço da missão tentada
+              </li>
+            </ul>
+          </div>
+
+          <h3 class="section-subtitle">
+            <i class="fas fa-theater-masks"></i> Cartas de Lealdade
+          </h3>
+          <ul class="list-custom">
+            <li>
+              Existem 2
+              <span class="term-tooltip"
+                >Cartas de Lealdade<span class="tooltip-text"
+                  >Loyalty Cards</span
+                ></span
+              >: uma do <strong>BEM</strong> (azul) e uma do
+              <strong>MAL</strong> (vermelha)
+            </li>
+            <li>
+              Você DEVE usar a carta que corresponde à lealdade da sua carta de
+              personagem
+            </li>
+            <li>
+              <strong class="character-team-evil"
+                >Usar a carta errada resulta em perda automática do
+                jogo!</strong
+              >
+            </li>
+          </ul>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>Importante:</strong> Esta regra só é relevante se você
+              estiver jogando Avalon combinado com as Plot Cards de The
+              Resistance. O jogo Avalon base não inclui Plot Cards.
+            </p>
+          </div>
+
+          <h3 class="section-subtitle">
+            <i class="fas fa-water"></i> Mulher do Lago
+          </h3>
+          <p>
+            <strong>Recomendado para 7+ jogadores.</strong> A
+            <strong>
+              <span class="term-tooltip"
+                >Mulher do Lago<span class="tooltip-text"
+                  >Lady of the Lake</span
+                ></span
+              >
+            </strong>
+            permite que um jogador examine secretamente a lealdade de outro
+            jogador.
+          </p>
+
+          <div class="highlight-box">
+            <p><strong>Preparação:</strong></p>
+            <ul class="list-custom">
+              <li>
+                Dê o token
+                <span class="term-tooltip"
+                  >Mulher do Lago<span class="tooltip-text"
+                    >Lady of the Lake</span
+                  ></span
+                >
+                ao jogador à direita do Líder inicial
+              </li>
+              <li>
+                Prepare 2
+                <strong
+                  ><span class="term-tooltip"
+                    >Cartas de Lealdade<span class="tooltip-text"
+                      >Loyalty Cards</span
+                    ></span
+                  ></strong
+                >
+                (Cartas de Lealdade): uma do BEM (azul) e uma do MAL (vermelha)
+              </li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <p><strong>Como Usar:</strong></p>
+            <ul class="list-custom">
+              <li>
+                Após a <strong>2ª, 3ª e 4ª missões</strong>, o jogador com a
+                <span class="term-tooltip"
+                  >Mulher do Lago<span class="tooltip-text"
+                    >Lady of the Lake</span
+                  ></span
+                >
+                escolhe outro jogador para examinar
+              </li>
+              <li>
+                O jogador examinado recebe as 2 Cartas de Lealdade e
+                <strong>passa secretamente</strong> a carta correspondente à sua
+                lealdade
+              </li>
+              <li>
+                A
+                <span class="term-tooltip"
+                  >Mulher do Lago<span class="tooltip-text"
+                    >Lady of the Lake</span
+                  ></span
+                >
+                vê a lealdade (Bem ou Mal), pode discutir sobre o que viu, mas
+                <strong>não pode revelar a carta</strong>
+              </li>
+              <li>
+                O jogador examinado <strong>recebe o token</strong>
+                <span class="term-tooltip"
+                  >Mulher do Lago<span class="tooltip-text"
+                    >Lady of the Lake</span
+                  ></span
+                >
+              </li>
+              <li>
+                Um jogador que já usou a
+                <span class="term-tooltip"
+                  >Mulher do Lago<span class="tooltip-text"
+                    >Lady of the Lake</span
+                  ></span
+                >
+                <strong>não pode</strong> ser examinado
+              </li>
+            </ul>
+          </div>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>Importante:</strong> Passar a carta errada resulta em
+              perda automática! A
+              <span class="term-tooltip"
+                >Mulher do Lago<span class="tooltip-text"
+                  >Lady of the Lake</span
+                ></span
+              >
+              fortalece o time do Bem.
+            </p>
+          </div>
+
+          <h3 class="section-subtitle">
+            <i class="fas fa-sword"></i> Excalibur
+          </h3>
+          <p>
+            Quem controla Excalibur tem tremendo poder, para o Bem ou para o
+            Mal. Excalibur permite a um membro da equipe
+            <strong>alterar o resultado da missão</strong> trocando a carta
+            jogada por outro jogador.
+          </p>
+
+          <div class="highlight-box">
+            <p><strong>Como Funciona:</strong></p>
+            <ul class="list-custom">
+              <li>
+                <strong>Fase de Formação:</strong> O Líder dá Excalibur a UM
+                jogador da equipe (não pode ser ele mesmo)
+              </li>
+              <li>
+                <strong>Fase da Missão:</strong> Cada jogador coloca sua carta
+                virada para baixo <strong>na sua frente</strong> (para ficar
+                claro quem jogou o quê)
+              </li>
+              <li>
+                <strong>Poder de Excalibur:</strong> ANTES de coletar as cartas,
+                o jogador com Excalibur pode mandar UM outro jogador
+                <strong>trocar</strong> sua carta (a carta não jogada vira a
+                carta jogada)
+              </li>
+              <li>
+                <strong>Revelação:</strong> O jogador com Excalibur
+                <strong>olha</strong> a carta que foi originalmente jogada pelo
+                outro jogador
+              </li>
+              <li>
+                Assim, ele sabe qual carta aquele jogador escolheu e se a troca
+                foi benéfica ou prejudicial
+              </li>
+              <li>O Líder então coleta e embaralha as cartas normalmente</li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <p><strong>Exemplo:</strong></p>
+            <p>
+              João (Líder) dá Excalibur para Maria e escolhe ela, Pedro e Ana
+              para a equipe. Todos jogam suas cartas viradas na frente deles.
+              Maria usa Excalibur e manda Pedro trocar sua carta. Maria olha a
+              carta original de Pedro (era Sucesso) e percebe que sua troca
+              condenou a missão ao fracasso! O Líder embaralha e revela: 2
+              Sucessos e 1 Falha.
+            </p>
+          </div>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-shield-alt"></i>
+              <strong>Estratégia:</strong> Excalibur pode ser usado pelo Bem
+              para forçar suspeitos a revelarem sua verdadeira intenção, ou pelo
+              Mal para sabotar missões de forma disfarçada!
+            </p>
+          </div>
+
+          <h3 id="lancelots" class="section-subtitle">
+            <i class="fas fa-exchange-alt"></i> Lancelot - Personagem Complexo
+          </h3>
+          <p>
+            Lancelot é um personagem complexo com múltiplas motivações. Ele pode
+            ser levado tanto para o Bem quanto para o Mal.
+            <strong>Existem 3 variantes:</strong>
+          </p>
+
+          <div class="character-card" style="border-color: #ffd700">
+            <div class="character-name" style="color: #ffd700">
+              <i class="fas fa-shield-alt"></i> VARIANTE 1: Lancelot Troca de
+              Lado Durante o Jogo
+            </div>
+            <p><strong>Preparação:</strong></p>
+            <ul class="list-custom">
+              <li>
+                Use AMBAS cartas de Lancelot (<strong
+                  ><span class="term-tooltip"
+                    >Lancelot Bom<span class="tooltip-text"
+                      >Good Lancelot</span
+                    ></span
+                  ></strong
+                >
+                e
+                <strong
+                  ><span class="term-tooltip"
+                    >Lancelot Mal<span class="tooltip-text"
+                      >Evil Lancelot</span
+                    ></span
+                  ></strong
+                >) no lugar de 1 carta do Bem e 1 do Mal
+              </li>
+              <li>
+                Monte baralho de Lealdade: 3 cartas "<strong>No Change</strong>"
+                (Sem Mudança) + 2 cartas "<strong>Switch Allegiance</strong>"
+                (Trocar Lado)
+              </li>
+              <li>Embaralhe e coloque próximo ao tabuleiro</li>
+            </ul>
+
+            <p><strong>Revelação:</strong></p>
+            <ul class="list-custom">
+              <li>
+                <strong
+                  ><span class="term-tooltip"
+                    >Lancelot Mal<span class="tooltip-text"
+                      >Evil Lancelot</span
+                    ></span
+                  ></strong
+                >
+                <strong>NÃO abre os olhos</strong>, apenas estende o polegar
+                para os outros vilões o reconhecerem
+              </li>
+            </ul>
+
+            <p><strong>Durante o Jogo:</strong></p>
+            <ul class="list-custom">
+              <li>
+                No início da <strong>3ª rodada</strong> e em CADA rodada
+                seguinte, vire 1 carta do baralho de Lealdade
+              </li>
+              <li>
+                "<strong>No Change</strong>" (Sem Mudança): Nada acontece, jogo
+                continua
+              </li>
+              <li>
+                "<strong>Switch Allegiance</strong>" (Trocar Lado): Os dois
+                Lancelots <strong>trocam secretamente de lado!</strong>
+              </li>
+              <li>
+                A troca afeta TUDO: condições de vitória, cartas de missão,
+                estratégia
+              </li>
+              <li>Eles NÃO trocam nem mostram suas cartas de personagem</li>
+              <li>É possível trocar 0, 1 ou 2 vezes durante o jogo</li>
+            </ul>
+          </div>
+
+          <div class="character-card" style="border-color: #ffd700">
+            <div class="character-name" style="color: #ffd700">
+              <i class="fas fa-eye"></i> VARIANTE 2: Trocas Conhecidas
+              Antecipadamente
+            </div>
+            <p>
+              Similar à Variante 1, mas as trocas são conhecidas com
+              antecedência:
+            </p>
+
+            <p><strong>Diferenças:</strong></p>
+            <ul class="list-custom">
+              <li>
+                Use 5 cartas "Sem Mudança" + 2 "Trocar Lado" (7 cartas total)
+              </li>
+              <li>
+                No início do jogo, vire todas as cartas em ordem no tabuleiro
+              </li>
+              <li><strong>Todos sabem QUANDO</strong> as trocas acontecerão</li>
+              <li>
+                <strong>Lancelot Mal DEVE</strong> sabotar missões em que
+                estiver
+              </li>
+              <li>Lancelot Bom DEVE jogar sucesso</li>
+            </ul>
+
+            <p>
+              Esta variante adiciona planejamento estratégico, pois todos sabem
+              quando a troca ocorrerá.
+            </p>
+          </div>
+
+          <div
+            class="character-card"
+            style="
+              border-color: #00ff00;
+              background: linear-gradient(135deg, #2a4f3f, #1e3a2a);
+            "
+          >
+            <div class="character-name" style="color: #00ff00">
+              <i class="fas fa-users"></i> VARIANTE 3: Lancelots se Reconhecem
+              (7+ JOGADORES)
+            </div>
+            <p><strong>⭐ Variante usada no Assistente do jogo ⭐</strong></p>
+
+            <p><strong>Preparação:</strong></p>
+            <ul class="list-custom">
+              <li>Use ambas cartas de Lancelot (Bom e Mal)</li>
+              <li>
+                <strong>Apenas para jogos com 7 ou mais jogadores</strong>
+              </li>
+            </ul>
+
+            <p><strong>Revelação:</strong></p>
+            <ul class="list-custom">
+              <li>Adicione à sequência de revelação:</li>
+              <li style="color: #00ff00">
+                "Lancelots, abram os olhos e se reconheçam"
+              </li>
+              <li style="color: #00ff00">"Lancelots, fechem os olhos"</li>
+            </ul>
+
+            <p><strong>Mecânica:</strong></p>
+            <ul class="list-custom">
+              <li>Os dois Lancelots <strong>sabem quem é o outro</strong></li>
+              <li>
+                Ao selecionar Lancelot Bom,
+                <strong>automaticamente</strong> Lancelot Mal é adicionado
+              </li>
+              <li>Ao desmarcar um, o outro também é desmarcado</li>
+              <li>
+                Adiciona incerteza: um jogador sabe que o outro é Lancelot, mas
+                não sabe de que lado!
+              </li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <p>
+              <i class="fas fa-lightbulb"></i>
+              <strong>Combinação Usada na Narração MP3:</strong>
+            </p>
+            <p>
+              O Assistente do jogo usa uma
+              <strong>combinação da Variante 1 com a Variante 3</strong>:
+            </p>
+            <ul class="list-custom">
+              <li>
+                Lancelots podem <strong>trocar de lado</strong> durante o jogo
+                (Variante 1)
+              </li>
+              <li>
+                Com 7+ jogadores, os Lancelots <strong>se reconhecem</strong> no
+                início (Variante 3)
+              </li>
+              <li>Com menos de 7 jogadores, eles NÃO se reconhecem</li>
+            </ul>
+          </div>
+
+          <div class="warning-box">
+            <p>
+              <i class="fas fa-exclamation-circle"></i>
+              <strong>Atenção:</strong> Lancelots aumentam muito a complexidade
+              do jogo! Recomendado apenas para jogadores experientes. O suspense
+              de não saber quando (ou se) a lealdade vai mudar é intenso!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dicas Estratégicas -->
+      <div class="section">
+        <h2 class="section-title">
+          <i class="fas fa-brain"></i> Dicas Estratégicas
+        </h2>
+        <div class="section-content">
+          <div class="tip-box">
+            <h3 style="color: #ffd700; margin-top: 0">Para o BEM:</h3>
+            <ul class="list-custom">
+              <li>Discuta MUITO antes de aprovar qualquer equipe</li>
+              <li>
+                Observe padrões de votação (quem aprova/rejeita frequentemente)
+              </li>
+              <li>Não tenha medo de rejeitar equipes suspeitas</li>
+              <li>Merlin: seja sutil! Use votos e comentários indiretos</li>
+              <li>Percival: proteja Merlin sem revelar quem ele é</li>
+            </ul>
+          </div>
+
+          <div class="warning-box">
+            <h3 class="color-evil" style="margin-top: 0">Para o MAL:</h3>
+            <ul class="list-custom">
+              <li>Coordene-se com seus aliados sem ser óbvio</li>
+              <li>Às vezes, jogar SUCESSO pode gerar mais confusão</li>
+              <li>Acuse outros jogadores para desviar suspeitas</li>
+              <li>Observe quem Merlin pode estar protegendo ou acusando</li>
+              <li>
+                Na tentativa de assassinato, escolham o jogador mais "sábio"
+              </li>
+            </ul>
+          </div>
+
+          <div class="highlight-box">
+            <h3 class="color-good" style="margin-top: 0">Dicas Gerais:</h3>
+            <ul class="list-custom">
+              <li><strong>Comunique-se!</strong> O jogo vive da discussão</li>
+              <li>Blefar é permitido e incentivado</li>
+              <li>Preste atenção nas reações emocionais dos jogadores</li>
+              <li>Use a lógica: "Se X fosse do mal, por que faria Y?"</li>
+              <li>
+                Lembre-se: votação apertada não significa necessariamente mal
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div
+        style="
+          text-align: center;
+          padding: 30px;
+          color: #b8956a;
+          font-family: 'Cinzel', serif;
+          margin-top: 40px;
+          border-top: 2px solid rgba(255, 215, 0, 0.2);
+        "
+      >
+        <p>The Resistance: AVALON</p>
+        <p style="font-size: 0.9em; margin-top: 10px">
+          Design original: Don Eskridge
+        </p>
+        <p
+          style="
+            font-size: 0.8em;
+            margin-top: 20px;
+            font-family: 'Lato', sans-serif;
+          "
+        >
+          Este manual foi adaptado para português brasileiro para uso com o
+          Assistente do jogo
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Scroll suave para âncoras
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Highlight da seção atual ao rolar
+      window.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll(".section[id]");
+        const navButtons = document.querySelectorAll(".side-nav-btn");
+
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navButtons.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.getAttribute("href") === "#" + current) {
+            btn.classList.add("active");
+          }
+        });
+      });
+
+      // Sistema de tooltips para mobile (toggle ao clicar)
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltips = document.querySelectorAll(".term-tooltip");
+
+        tooltips.forEach((tooltip) => {
+          tooltip.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Fechar outros tooltips abertos
+            tooltips.forEach((t) => {
+              if (t !== tooltip) {
+                t.classList.remove("active");
+              }
+            });
+
+            // Toggle do tooltip atual
+            this.classList.toggle("active");
+          });
+        });
+
+        // Fechar tooltips ao clicar fora
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".term-tooltip")) {
+            tooltips.forEach((t) => t.classList.remove("active"));
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
