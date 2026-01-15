@@ -5,14 +5,14 @@ const ROLE_DEFINITIONS = {
   // Obrigatórios
   merlin: {
     name: "Merlin",
-    icon: "🔮",
+    icon: "🧙🏻‍♂️",
     team: "good",
     mandatory: true,
     description: "Conhece os servos do mal",
   },
   assassin: {
     name: "Assassino",
-    icon: "🗡️",
+    icon: "💀",
     team: "evil",
     mandatory: true,
     description: "Tenta identificar Merlin",
@@ -27,7 +27,7 @@ const ROLE_DEFINITIONS = {
   },
   lancelotGood: {
     name: "Lancelot Bom",
-    icon: "⚔️",
+    icon: "👍🏻",
     team: "good",
     description: "Par com Lancelot Mal",
     linkedRole: "lancelotEvil",
@@ -42,19 +42,19 @@ const ROLE_DEFINITIONS = {
   },
   mordred: {
     name: "Mordred",
-    icon: "👤",
+    icon: "🐍",
     team: "evil",
     description: "Invisível para Merlin",
   },
   oberon: {
     name: "Oberon",
-    icon: "🌑",
+    icon: "👻",
     team: "evil",
     description: "Não conhece outros servos",
   },
   lancelotEvil: {
     name: "Lancelot Mal",
-    icon: "🗡️",
+    icon: "👎🏻",
     team: "evil",
     description: "Par com Lancelot Bom",
     linkedRole: "lancelotGood",
@@ -63,7 +63,7 @@ const ROLE_DEFINITIONS = {
   // Preenchimento automático (não editáveis)
   loyalServant: {
     name: "Servos de Arthur",
-    icon: "⚔️",
+    icon: "🛡️",
     team: "good",
     auto: true,
     description: "Preenchem vagas restantes",
@@ -513,7 +513,7 @@ class AvalonApp {
     // Atualizar títulos das seções
     document.getElementById(
       "goodRolesTitle"
-    ).innerHTML = `⚔️ Forças do Bem <span style="color: #ffe396;">→</span> <span style="color: white;">${totalGood} Personagens</span>`;
+    ).innerHTML = `🛡️ Forças do Bem <span style="color: #ffe396;">→</span> <span style="color: white;">${totalGood} Personagens</span>`;
     document.getElementById(
       "evilRolesTitle"
     ).innerHTML = `🗡️ Forças do Mal <span style="color: #ffe396;">→</span> <span style="color: white;">${totalEvil} Personagens</span>`;

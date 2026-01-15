@@ -2250,3 +2250,34 @@ body {
 .game-step.step-assassination {
   border-left: 4px solid #dc143c;
 }
+
+/* ===== CORES PARA TEXTO DO GUIA ===== */
+.text-good {
+  color: #82a1fd;
+  font-weight: bold;
+}
+
+.text-evil {
+  color: #ff6282;
+  font-weight: bold;
+}
+
+.text-success {
+  color: #f2c94c;
+  font-weight: bold;
+}
+
+.text-fail {
+  color: #cd9a5b;
+  font-weight: bold;
+}
+
+.text-warning {
+  color: #ffb84d;
+  font-weight: bold;
+}
+
+.text-highlight {
+  color: #ffd700;
+  font-weight: bold;
+}

@@ -1,6 +1,20 @@
 // ===== GUIA DO JOGO - CONTROLE DE ETAPAS DINÂMICAS =====
 
 // Adicionar métodos à classe AvalonApp
+
+function colorText(text, word, colorClass) {
+  const regex = new RegExp(`\\b${word}\\b`, "gi");
+  return text.replace(regex, `<span class="${colorClass}">$&</span>`);
+}
+
+function autoColorGameText(text) {
+  // Auto-colorir palavras comuns
+  text = colorText(text, "BEM", "text-good");
+  text = colorText(text, "MAL", "text-evil");
+  text = colorText(text, "Sucesso", "text-success");
+  text = colorText(text, "Falha", "text-fail");
+  return text;
+}
 AvalonApp.prototype.openGameGuide = function () {
   document.getElementById("gameGuideModal").style.display = "flex";
   this.updateGameSteps();
@@ -115,7 +129,7 @@ AvalonApp.prototype.generateGameSteps = function (
     badges: ["Missão"],
   });
 
-  // SEGMENTAÇÃO DE MISSÕES (se ativo)
+  // MISSÃO ALVO (se ativo)
   if (targeting) {
     steps.push({
       number: stepNumber++,
@@ -235,11 +249,11 @@ AvalonApp.prototype.generateGameSteps = function (
         subactions: [
           {
             type: "unordered",
-            text: "Se TODAS as cartas forem Sucesso → Missão é SUCESSO",
+            text: "Se TODAS as cartas forem Sucesso → Missão é bem-sucedida",
           },
           {
             type: "unordered",
-            text: "Se houver UMA ou mais cartas de Falha → Missão FALHA",
+            text: "Se houver UMA ou mais cartas de Falha → Missão mal-sucedida",
           },
         ],
       },
@@ -247,6 +261,10 @@ AvalonApp.prototype.generateGameSteps = function (
         type: "note",
         text: "4ª missão com 7+ jogadores precisa de 2 Falhas para falhar",
         indented: true,
+      },
+      {
+        type: "action",
+        text: "Marque o resultado da missão no tabuleiro (vitória do BEM ou do MAL)",
       },
     ],
     type: "mission",
@@ -300,10 +318,6 @@ AvalonApp.prototype.generateGameSteps = function (
     content: [
       {
         type: "action",
-        text: "Marque o resultado no tabuleiro (Sucesso ou Falha)",
-      },
-      {
-        type: "action",
         text: "Passe a liderança para o próximo jogador (sentido horário)",
       },
       {
@@ -328,11 +342,11 @@ AvalonApp.prototype.generateGameSteps = function (
       },
       {
         type: "action",
-        text: "Os jogadores do mal discutem entre si (sem revelar cartas)",
+        text: "Os jogadores do MAL discutem entre si (sem revelar cartas)",
       },
       {
         type: "action",
-        text: "O Assassino aponta para um jogador do bem",
+        text: "O Assassino aponta para um jogador do BEM",
         subactions: [
           { type: "unordered", text: "Se for Merlin: MAL VENCE!" },
           { type: "unordered", text: "Se NÃO for Merlin: BEM VENCE!" },
@@ -359,7 +373,7 @@ AvalonApp.prototype.generateGameSteps = function (
         subactions: [
           {
             type: "unordered",
-            text: "3 missões bem-sucedidas + Merlin sobrevive ao assassinato",
+            text: "😄 3 missões bem-sucedidas + 🧙🏻‍♂️ Merlin sobrevive ao assassinato",
           },
         ],
       },
@@ -370,15 +384,15 @@ AvalonApp.prototype.generateGameSteps = function (
         subactions: [
           {
             type: "unordered",
-            text: "3 missões falham OU",
+            text: "😈 3 missões mal-sucedidas OU",
           },
           {
             type: "unordered",
-            text: "5 times rejeitados consecutivamente OU",
+            text: "🤯 5 times rejeitados consecutivamente OU",
           },
           {
             type: "unordered",
-            text: "conseguir assassinar Merlin",
+            text: "💀 Conseguir assassinar Merlin",
           },
         ],
       },
@@ -457,7 +471,7 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
                 ? `<span style="display: inline-block; width: 25px; color: #ffd700; font-weight: bold;">•</span>`
                 : `<span style="display: inline-block; width: 25px; color: #ffd700; font-weight: bold;">${actionCounter}.</span>`;
 
-            li.innerHTML = `${marker}${item.text}`;
+            li.innerHTML = `${marker}${autoColorGameText(item.text)}`;
             li.setAttribute("data-type", "action");
             contentOl.appendChild(li);
 
@@ -485,7 +499,9 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
                       }.</span>`
                     : `<span style="position: absolute; left: 0; color: #ffd700;">•</span>`;
 
-                subLi.innerHTML = `${marker}${subaction.text}`;
+                subLi.innerHTML = `${marker}${autoColorGameText(
+                  subaction.text
+                )}`; // ← ADICIONE autoColorGameText aqui
                 subList.appendChild(subLi);
               });
 
