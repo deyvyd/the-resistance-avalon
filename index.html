@@ -336,9 +336,29 @@
 
         <!-- Seção de Etapas do Jogo -->
         <div class="guide-section">
-          <h3 class="guide-section-title">
-            <i class="fas fa-list-ol"></i> Etapas do Jogo
-          </h3>
+          <div class="guide-steps-header">
+            <h3 class="guide-section-title">
+              <i class="fas fa-list-ol"></i> Etapas do Jogo
+              <span id="stepCounter" class="step-counter-text"></span>
+            </h3>
+            <div class="step-navigation">
+              <button
+                class="step-nav-btn"
+                id="prevStepBtn"
+                onclick="app.previousStep()"
+                disabled
+              >
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button
+                class="step-nav-btn"
+                id="nextStepBtn"
+                onclick="app.nextStep()"
+              >
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
           <div id="gameStepsContainer" class="game-steps-container">
             <!-- As etapas serão inseridas aqui dinamicamente -->
           </div>

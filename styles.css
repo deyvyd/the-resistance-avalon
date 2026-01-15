@@ -2282,26 +2282,26 @@ body {
   font-weight: bold;
 }
 
-/* ===== CONDIÇÕES DE VITÓRIA - CAIXINHAS ===== */
+/* ===== CONDIÇÕES DE VITÓRIA - VERSÃO COMPACTA ===== */
 
 .victory-conditions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .victory-group {
   background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 15px;
   border: 2px solid;
   transition: all 0.3s ease;
 }
 
 .victory-group:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .victory-good {
@@ -2325,9 +2325,9 @@ body {
 .victory-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
   border-bottom: 2px solid rgba(255, 215, 0, 0.2);
 }
 
@@ -2342,12 +2342,12 @@ body {
 }
 
 .victory-header i {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .victory-header span {
   font-family: "Cinzel", serif;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.5px;
 }
@@ -2355,44 +2355,44 @@ body {
 .victory-condition {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 15px;
+  gap: 10px;
+  padding: 10px;
   background: rgba(30, 45, 69, 0.4);
-  border-radius: 8px;
-  margin: 10px 0;
+  border-radius: 6px;
+  margin: 6px 0;
   transition: all 0.3s ease;
 }
 
 .victory-condition:hover {
   background: rgba(30, 45, 69, 0.6);
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .condition-icon {
-  font-size: 2.5em;
-  min-width: 50px;
+  font-size: 1.8em;
+  min-width: 35px;
   text-align: center;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
 }
 
 .condition-text {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .condition-text strong {
   color: #ffd700;
   font-family: "Cinzel", serif;
-  font-size: 1.05em;
+  font-size: 0.95em;
   letter-spacing: 0.5px;
 }
 
 .condition-text small {
   color: #b0b0b0;
-  font-size: 0.9em;
-  line-height: 1.4;
+  font-size: 0.8em;
+  line-height: 1.3;
 }
 
 /* Conectores "E" e "OU" */
@@ -2401,9 +2401,9 @@ body {
   text-align: center;
   font-family: "Cinzel", serif;
   font-weight: bold;
-  font-size: 1.1em;
-  padding: 8px 0;
-  margin: 5px 0;
+  font-size: 0.9em;
+  padding: 4px 0;
+  margin: 3px 0;
   position: relative;
 }
 
@@ -2422,7 +2422,7 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  width: 40%;
+  width: 38%;
   height: 1px;
   background: currentColor;
   opacity: 0.3;
@@ -2442,43 +2442,153 @@ body {
 @media (max-width: 768px) {
   .victory-conditions-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
   }
 
   .victory-group {
-    padding: 15px;
+    padding: 12px;
   }
 
   .victory-header {
-    font-size: 1em;
-  }
-
-  .victory-header i {
-    font-size: 1.3em;
-  }
-
-  .condition-icon {
-    font-size: 2em;
-    min-width: 40px;
-  }
-
-  .condition-text strong {
     font-size: 0.95em;
   }
 
+  .victory-header i {
+    font-size: 1.1em;
+  }
+
+  .condition-icon {
+    font-size: 1.5em;
+    min-width: 30px;
+  }
+
+  .condition-text strong {
+    font-size: 1.1em;
+  }
+
   .condition-text small {
-    font-size: 0.85em;
+    font-size: 0.75em;
   }
 }
 
 @media (max-width: 480px) {
   .victory-condition {
-    flex-direction: column;
-    text-align: center;
-    padding: 12px;
+    padding: 8px;
   }
 
   .condition-icon {
-    margin-bottom: 5px;
+    font-size: 1.3em;
+  }
+}
+
+/* ===== NAVEGAÇÃO DE ETAPAS DO GUIA ===== */
+
+.guide-steps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.guide-steps-header .guide-section-title {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.step-counter-text {
+  color: #b8956a;
+  font-size: 0.85em;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.step-navigation {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.step-nav-btn {
+  background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
+  border: 2px solid #4a5f7f;
+  color: #ffd700;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.step-nav-btn:hover:not(:disabled) {
+  background: linear-gradient(145deg, #3a4f6f, #2e3a4a);
+  border-color: #ffd700;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.step-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.step-nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Animação ao trocar de etapa */
+.game-steps-container .game-step {
+  animation: fadeInStep 0.4s ease;
+}
+
+@keyframes fadeInStep {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .guide-steps-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .step-navigation {
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .step-nav-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+  }
+
+  .step-counter-text {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .step-nav-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1em;
   }
 }

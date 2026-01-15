@@ -15,8 +15,10 @@ function autoColorGameText(text) {
   text = colorText(text, "Falha", "text-fail");
   return text;
 }
+
 AvalonApp.prototype.openGameGuide = function () {
   document.getElementById("gameGuideModal").style.display = "flex";
+  this.currentStepIndex = 0; // Inicializar índice da etapa atual
   this.updateGameSteps();
 };
 
@@ -30,13 +32,51 @@ AvalonApp.prototype.updateGameSteps = function () {
   const targeting = document.getElementById("toggleTargeting").checked;
   const ladyOfLake = document.getElementById("toggleLadyOfLake").checked;
 
-  const steps = this.generateGameSteps(
+  this.allSteps = this.generateGameSteps(
     lancelots,
     excalibur,
     targeting,
     ladyOfLake
   );
-  this.renderGameSteps(steps);
+  this.currentStepIndex = 0; // Resetar ao atualizar
+  this.renderCurrentStep();
+};
+
+AvalonApp.prototype.nextStep = function () {
+  if (this.currentStepIndex < this.allSteps.length - 1) {
+    this.currentStepIndex++;
+    this.renderCurrentStep();
+  }
+};
+
+AvalonApp.prototype.previousStep = function () {
+  if (this.currentStepIndex > 0) {
+    this.currentStepIndex--;
+    this.renderCurrentStep();
+  }
+};
+
+AvalonApp.prototype.renderCurrentStep = function () {
+  if (!this.allSteps || this.allSteps.length === 0) return;
+
+  const currentStep = this.allSteps[this.currentStepIndex];
+  const totalSteps = this.allSteps.length;
+
+  // Atualizar contador no título
+  const stepCounter = document.getElementById("stepCounter");
+  stepCounter.textContent = `(Etapa ${
+    this.currentStepIndex + 1
+  } de ${totalSteps})`;
+
+  // Renderizar apenas a etapa atual
+  this.renderGameSteps([currentStep]);
+
+  // Atualizar estado dos botões de navegação
+  const prevBtn = document.getElementById("prevStepBtn");
+  const nextBtn = document.getElementById("nextStepBtn");
+
+  prevBtn.disabled = this.currentStepIndex === 0;
+  nextBtn.disabled = this.currentStepIndex === totalSteps - 1;
 };
 
 AvalonApp.prototype.generateGameSteps = function (
@@ -461,7 +501,7 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
 
                 subLi.innerHTML = `${marker}${autoColorGameText(
                   subaction.text
-                )}`; // ← ADICIONE autoColorGameText aqui
+                )}`;
                 subList.appendChild(subLi);
               });
 
