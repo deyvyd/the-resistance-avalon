@@ -347,7 +347,9 @@
 
       <!-- Como Jogar -->
       <div id="como-jogar" class="section accordion-section">
-        <h2 class="section-title accordion-header"><i class="fas fa-gamepad"></i> Como Jogar</h2>
+        <h2 class="section-title accordion-header">
+          <i class="fas fa-gamepad"></i> Como Jogar
+        </h2>
         <div class="section-content accordion-content">
           <p>O jogo consiste em várias rodadas. Cada rodada tem duas fases:</p>
 
@@ -1394,8 +1396,9 @@
 
         // Sistema de Accordion - Apenas uma seção aberta por vez
         const accordionHeaders = document.querySelectorAll(".accordion-header");
-        const accordionContents = document.querySelectorAll(".accordion-content");
-        
+        const accordionContents =
+          document.querySelectorAll(".accordion-content");
+
         // Fechar todas as seções no início, exceto a primeira
         accordionContents.forEach((content, index) => {
           if (index !== 0) {
