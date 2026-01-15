@@ -2281,3 +2281,204 @@ body {
   color: #ffd700;
   font-weight: bold;
 }
+
+/* ===== CONDIÇÕES DE VITÓRIA - CAIXINHAS ===== */
+
+.victory-conditions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.victory-group {
+  background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+
+.victory-group:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.victory-good {
+  border-color: #4169e1;
+  background: linear-gradient(
+    145deg,
+    rgba(65, 105, 225, 0.15),
+    rgba(65, 105, 225, 0.05)
+  );
+}
+
+.victory-evil {
+  border-color: #dc143c;
+  background: linear-gradient(
+    145deg,
+    rgba(220, 20, 60, 0.15),
+    rgba(220, 20, 60, 0.05)
+  );
+}
+
+.victory-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.victory-good .victory-header {
+  color: #82a1fd;
+  border-bottom-color: #4169e1;
+}
+
+.victory-evil .victory-header {
+  color: #ff6282;
+  border-bottom-color: #dc143c;
+}
+
+.victory-header i {
+  font-size: 1.5em;
+}
+
+.victory-header span {
+  font-family: "Cinzel", serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.victory-condition {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(30, 45, 69, 0.4);
+  border-radius: 8px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.victory-condition:hover {
+  background: rgba(30, 45, 69, 0.6);
+  transform: translateX(5px);
+}
+
+.condition-icon {
+  font-size: 2.5em;
+  min-width: 50px;
+  text-align: center;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.condition-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.condition-text strong {
+  color: #ffd700;
+  font-family: "Cinzel", serif;
+  font-size: 1.05em;
+  letter-spacing: 0.5px;
+}
+
+.condition-text small {
+  color: #b0b0b0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+/* Conectores "E" e "OU" */
+.victory-and,
+.victory-or {
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 8px 0;
+  margin: 5px 0;
+  position: relative;
+}
+
+.victory-and {
+  color: #82a1fd;
+}
+
+.victory-or {
+  color: #ff6282;
+}
+
+.victory-and::before,
+.victory-and::after,
+.victory-or::before,
+.victory-or::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.victory-and::before,
+.victory-or::before {
+  left: 0;
+}
+
+.victory-and::after,
+.victory-or::after {
+  right: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .victory-conditions-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .victory-group {
+    padding: 15px;
+  }
+
+  .victory-header {
+    font-size: 1em;
+  }
+
+  .victory-header i {
+    font-size: 1.3em;
+  }
+
+  .condition-icon {
+    font-size: 2em;
+    min-width: 40px;
+  }
+
+  .condition-text strong {
+    font-size: 0.95em;
+  }
+
+  .condition-text small {
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .victory-condition {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .condition-icon {
+    margin-bottom: 5px;
+  }
+}

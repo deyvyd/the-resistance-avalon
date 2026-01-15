@@ -331,7 +331,7 @@ AvalonApp.prototype.generateGameSteps = function (
 
   // ===== FINAL DO JOGO =====
 
-  // TENTATIVA DE ASSASSINATO - NOVO TIPO "assassination" com badge vermelho
+  // TENTATIVA DE ASSASSINATO - tipo "assassination" com badge vermelho
   steps.push({
     number: stepNumber++,
     title: "💀 Tentativa de Assassinato",
@@ -357,48 +357,8 @@ AvalonApp.prototype.generateGameSteps = function (
         text: "Esta é a última chance do Mal! Merlin precisa ser sutil para o BEM vencer o jogo.",
       },
     ],
-    type: "assassination", // NOVO TIPO
-    badges: ["Assassinato"], // NOVO BADGE
-  });
-
-  // CONDIÇÕES DE VITÓRIA - tipo "endgame" agora com badge dourado
-  steps.push({
-    number: stepNumber++,
-    title: "🏆 Condições de Vitória",
-    content: [
-      {
-        type: "action",
-        marker: "bullet",
-        text: "BEM vence se:",
-        subactions: [
-          {
-            type: "unordered",
-            text: "😄 3 missões bem-sucedidas + 🧙🏻‍♂️ Merlin sobrevive ao assassinato",
-          },
-        ],
-      },
-      {
-        type: "action",
-        marker: "bullet",
-        text: "MAL vence se:",
-        subactions: [
-          {
-            type: "unordered",
-            text: "😈 3 missões mal-sucedidas OU",
-          },
-          {
-            type: "unordered",
-            text: "🤯 5 times rejeitados consecutivamente OU",
-          },
-          {
-            type: "unordered",
-            text: "💀 Conseguir assassinar Merlin",
-          },
-        ],
-      },
-    ],
-    type: "endgame",
-    badges: ["Final"], // Badge agora é dourado via CSS
+    type: "assassination",
+    badges: ["Assassinato"],
   });
 
   return steps;
@@ -631,7 +591,7 @@ AvalonApp.prototype.renderGameSteps = function (steps) {
           Revelação: "badge-revelation",
           Missão: "badge-mission",
           Opcional: "badge-optional",
-          Assassinato: "badge-assassination", // NOVO BADGE
+          Assassinato: "badge-assassination",
           Final: "badge-endgame",
         };
 
