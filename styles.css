@@ -1775,3 +1775,337 @@ body {
     right: 20px;
   }
 }
+
+/* ===== MODAL DO GUIA DO JOGO ===== */
+
+.modal-content-wide {
+  max-width: 900px;
+  max-height: 85vh;
+}
+
+.guide-section {
+  margin: 25px 0;
+  padding: 20px;
+  background: rgba(30, 45, 69, 0.4);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.guide-section-title {
+  font-family: "Cinzel", serif;
+  color: #ffd700;
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guide-hint {
+  color: #b8956a;
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* ===== TOGGLES DE RECURSOS OPCIONAIS ===== */
+
+.optional-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.feature-toggle {
+  background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
+  border: 2px solid #4a5f7f;
+  border-radius: 8px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-toggle:hover {
+  border-color: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.feature-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.feature-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.feature-icon {
+  font-size: 2em;
+  min-width: 40px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.feature-info {
+  flex: 1;
+}
+
+.feature-info strong {
+  color: #e0e0e0;
+  display: block;
+  font-size: 1em;
+  margin-bottom: 3px;
+}
+
+.feature-info small {
+  color: #b0b0b0;
+  display: block;
+  font-size: 0.85em;
+  line-height: 1.3;
+}
+
+/* Estado Ativo */
+.feature-toggle input[type="checkbox"]:checked + label {
+  color: #ffd700;
+}
+
+.feature-toggle input[type="checkbox"]:checked + label .feature-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+}
+
+.feature-toggle input[type="checkbox"]:checked + label .feature-info strong {
+  color: #ffd700;
+}
+
+.feature-toggle:has(input:checked) {
+  border-color: #ffd700;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 215, 0, 0.1),
+    rgba(255, 215, 0, 0.05)
+  );
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+/* ===== CONTAINER DE ETAPAS ===== */
+
+.game-steps-container {
+  margin-top: 20px;
+  padding: 15px 0;
+}
+
+.game-step {
+  background: linear-gradient(145deg, #2a3f5f, #1e2a3a);
+  border: 2px solid #4a5f7f;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.game-step:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
+}
+
+.step-number {
+  background: linear-gradient(145deg, #ffd700, #b8860b);
+  color: #1a0a2e;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(255, 215, 0, 0.4);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-family: "Cinzel", serif;
+  color: #ffd700;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-description {
+  color: #e0e0e0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.step-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.step-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px;
+}
+
+.badge-setup {
+  background: rgba(65, 105, 225, 0.2);
+  color: #82a1fd;
+  border: 1px solid #4169e1;
+}
+
+.badge-revelation {
+  background: rgba(138, 43, 226, 0.2);
+  color: #c08fff;
+  border: 1px solid #9370db;
+}
+
+.badge-mission {
+  background: rgba(255, 165, 0, 0.2);
+  color: #ffb84d;
+  border: 1px solid #ff9500;
+}
+
+.badge-optional {
+  background: rgba(0, 195, 255, 0.2);
+  color: #33ccff;
+  border: 1px solid #0099ff;
+}
+
+.badge-endgame {
+  background: rgba(220, 20, 60, 0.2);
+  color: #ff6282;
+  border: 1px solid #dc143c;
+}
+
+/* Tipos de Etapas */
+.game-step.step-setup {
+  border-left: 4px solid #4169e1;
+}
+
+.game-step.step-revelation {
+  border-left: 4px solid #9370db;
+}
+
+.game-step.step-mission {
+  border-left: 4px solid #ff9500;
+}
+
+.game-step.step-optional {
+  border-left: 4px solid #0099ff;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 195, 255, 0.05),
+    rgba(0, 195, 255, 0.02)
+  );
+}
+
+.game-step.step-endgame {
+  border-left: 4px solid #dc143c;
+}
+
+/* Sub-etapas (aninhadas) */
+.game-step-nested {
+  margin-left: 40px;
+  padding: 12px 15px;
+  font-size: 0.95em;
+}
+
+.game-step-nested .step-number {
+  min-width: 30px;
+  height: 30px;
+  font-size: 1em;
+}
+
+/* Destaque para etapas condicionais */
+.game-step.conditional {
+  border-style: dashed;
+  opacity: 0.85;
+}
+
+.game-step.conditional:hover {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 768px) {
+  .modal-content-wide {
+    max-width: 95%;
+    padding: 20px 15px;
+  }
+
+  .optional-features {
+    grid-template-columns: 1fr;
+  }
+
+  .game-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .step-content {
+    width: 100%;
+  }
+
+  .game-step-nested {
+    margin-left: 0;
+  }
+
+  .guide-section-title {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-toggle label {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-number {
+    min-width: 35px;
+    height: 35px;
+    font-size: 1em;
+  }
+
+  .step-title {
+    font-size: 1em;
+  }
+}

@@ -17,14 +17,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Botões Flutuantes (Configurações + Manual) -->
+    <!-- Botões Flutuantes (Configurações + Manual + Guia) -->
     <div class="floating-buttons">
-      <button class="floating-btn" onclick="app.openSettings()" data-tooltip="Configurações">
+      <button
+        class="floating-btn"
+        onclick="app.openSettings()"
+        data-tooltip="Configurações"
+      >
         <i class="fas fa-cog"></i>
       </button>
-      <a href="manual.html" class="floating-btn" data-tooltip="Manual de Regras">
+      <a
+        href="manual.html"
+        class="floating-btn"
+        data-tooltip="Manual de Regras"
+      >
         <i class="fas fa-book"></i>
       </a>
+      <button
+        class="floating-btn"
+        onclick="app.openGameGuide()"
+        data-tooltip="Guia do Jogo"
+      >
+        <i class="fas fa-map-marked-alt"></i>
+      </button>
     </div>
 
     <!-- Título Principal -->
@@ -232,6 +247,103 @@
       </div>
     </div>
 
+    <!-- Modal do Guia do Jogo -->
+    <div id="gameGuideModal" class="modal" style="display: none">
+      <div class="modal-backdrop" onclick="app.closeGameGuide()"></div>
+      <div class="modal-content modal-content-wide">
+        <h2 class="modal-title">🗺️ GUIA DO JOGO</h2>
+
+        <!-- Seção de Recursos Opcionais -->
+        <div class="guide-section">
+          <h3 class="guide-section-title">
+            <i class="fas fa-toggle-on"></i> Recursos Opcionais
+          </h3>
+          <p class="guide-hint">
+            Selecione os recursos que deseja usar nesta partida:
+          </p>
+
+          <div class="optional-features">
+            <div class="feature-toggle">
+              <input
+                type="checkbox"
+                id="toggleLancelots"
+                onchange="app.updateGameSteps()"
+              />
+              <label for="toggleLancelots">
+                <span class="feature-icon">🔄</span>
+                <div class="feature-info">
+                  <strong>Lancelots (Troca de Lado)</strong>
+                  <small>Lancelots podem trocar de lado durante o jogo</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="feature-toggle">
+              <input
+                type="checkbox"
+                id="toggleExcalibur"
+                onchange="app.updateGameSteps()"
+              />
+              <label for="toggleExcalibur">
+                <span class="feature-icon">🗡️</span>
+                <div class="feature-info">
+                  <strong>Excalibur</strong>
+                  <small>Permite alterar o resultado da missão</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="feature-toggle">
+              <input
+                type="checkbox"
+                id="toggleTargeting"
+                onchange="app.updateGameSteps()"
+              />
+              <label for="toggleTargeting">
+                <span class="feature-icon">🎯</span>
+                <div class="feature-info">
+                  <strong>Segmentação de Missões</strong>
+                  <small>Missões podem ser feitas em qualquer ordem</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="feature-toggle">
+              <input
+                type="checkbox"
+                id="toggleLadyOfLake"
+                onchange="app.updateGameSteps()"
+              />
+              <label for="toggleLadyOfLake">
+                <span class="feature-icon">💧</span>
+                <div class="feature-info">
+                  <strong>Mulher do Lago</strong>
+                  <small>Permite examinar a lealdade de outros jogadores</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção de Etapas do Jogo -->
+        <div class="guide-section">
+          <h3 class="guide-section-title">
+            <i class="fas fa-list-ol"></i> Etapas do Jogo
+          </h3>
+          <div id="gameStepsContainer" class="game-steps-container">
+            <!-- As etapas serão inseridas aqui dinamicamente -->
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="app.closeGameGuide()">
+            <i class="fas fa-check"></i> Entendido
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script src="app-mp3.js"></script>
+    <script src="game-guide.js"></script>
   </body>
 </html>
