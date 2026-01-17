@@ -13,3 +13,4 @@ Thumbs.db
 
 # Arquivos temporários
 *.tmp
+.history/
