@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -87,7 +87,7 @@
       <div class="game-title">
         <div
           style="
-            font-family: 'Cinzel', serif;
+            font-family: &quot;Cinzel&quot;, serif;
             font-size: 1.5em;
             color: #b8956a;
             letter-spacing: 3px;
@@ -98,7 +98,7 @@
         </div>
         <h1
           style="
-            font-family: 'Cinzel', serif;
+            font-family: &quot;Cinzel&quot;, serif;
             font-size: 4em;
             color: #ffd700;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
@@ -663,7 +663,34 @@
               <em
                 ><a
                   style="color: #ffeb7a; cursor: pointer"
-                  onclick="const regraSection = document.getElementById('regras-opcionais'); const header = regraSection.querySelector('.accordion-header'); const content = regraSection.querySelector('.accordion-content'); const allContents = document.querySelectorAll('.accordion-section .accordion-content'); allContents.forEach(c => { c.style.display = 'none'; c.style.maxHeight = '0'; c.style.opacity = '0'; }); content.style.display = 'block'; content.style.maxHeight = content.scrollHeight + 'px'; content.style.opacity = '1'; setTimeout(() => { const elem = document.getElementById('lancelots'); if(elem) elem.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 300); return false;"
+                  onclick="
+                    const regraSection =
+                      document.getElementById('regras-opcionais');
+                    const header =
+                      regraSection.querySelector('.accordion-header');
+                    const content =
+                      regraSection.querySelector('.accordion-content');
+                    const allContents = document.querySelectorAll(
+                      '.accordion-section .accordion-content'
+                    );
+                    allContents.forEach((c) => {
+                      c.style.display = 'none';
+                      c.style.maxHeight = '0';
+                      c.style.opacity = '0';
+                    });
+                    content.style.display = 'block';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.opacity = '1';
+                    setTimeout(() => {
+                      const elem = document.getElementById('lancelots');
+                      if (elem)
+                        elem.scrollIntoView({
+                          behavior: 'smooth',
+                          block: 'start',
+                        });
+                    }, 300);
+                    return false;
+                  "
                   >Veja seção de Regras Opcionais para as 3 variantes de
                   Lancelot.</a
                 ></em
@@ -1196,34 +1223,38 @@
             <ul class="list-custom">
               <li>
                 No início da <strong>3ª rodada</strong> e em CADA rodada
-                seguinte, vire 1 carta do baralho de Lealdade
+                seguinte, vire 1 carta do baralho de Lealdade:
               </li>
-              <li>
-                <strong
-                  ><span class="term-tooltip"
-                    >Sem Mudança<span class="tooltip-text"
-                      >No Change</span
-                    ></span
-                  ></strong
-                >
-                : Nada acontece, jogo continua
-              </li>
-              <li>
-                <strong
-                  ><span class="term-tooltip"
-                    >Trocar de Lado<span class="tooltip-text"
-                      >Switch Allegiance</span
-                    ></span
-                  ></strong
-                >: Os dois Lancelots
-                <strong>trocam secretamente de lado!</strong>
-              </li>
-              <li>
-                A troca afeta TUDO: condições de vitória, cartas de missão,
-                estratégia
-              </li>
-              <li>Eles NÃO trocam nem mostram suas cartas de personagem</li>
-              <li>É possível trocar 0, 1 ou 2 vezes durante o jogo</li>
+              <ul class="list-custom" style="padding-left: 20px">
+                <li>
+                  <strong
+                    ><span class="term-tooltip"
+                      >Sem Mudança<span class="tooltip-text"
+                        >No Change</span
+                      ></span
+                    ></strong
+                  >
+                  : Nada acontece, jogo continua
+                </li>
+                <li>
+                  <strong
+                    ><span class="term-tooltip"
+                      >Trocar de Lado<span class="tooltip-text"
+                        >Switch Allegiance</span
+                      ></span
+                    ></strong
+                  >: Os dois Lancelots
+                  <strong>trocam secretamente de lado!</strong>
+                </li>
+                <ul class="list-custom" style="padding-left: 20px">
+                  <li>
+                    A troca afeta TUDO: condições de vitória, cartas de missão,
+                    estratégia
+                  </li>
+                  <li>Eles NÃO trocam nem mostram suas cartas de personagem</li>
+                  <li>É possível trocar 0, 1 ou 2 vezes durante o jogo</li>
+                </ul>
+              </ul>
             </ul>
           </div>
 
@@ -1399,7 +1430,7 @@
           text-align: center;
           padding: 30px;
           color: #b8956a;
-          font-family: 'Cinzel', serif;
+          font-family: &quot;Cinzel&quot;, serif;
           margin-top: 40px;
           border-top: 2px solid rgba(255, 215, 0, 0.2);
         "
@@ -1412,7 +1443,7 @@
           style="
             font-size: 0.8em;
             margin-top: 20px;
-            font-family: 'Lato', sans-serif;
+            font-family: &quot;Lato&quot;, sans-serif;
           "
         >
           Este manual foi adaptado para português brasileiro para uso com o
