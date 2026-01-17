@@ -52,7 +52,7 @@ Este assistente digital facilita a experiência de jogo do Avalon, eliminando a 
   - 🔄 Lancelots (troca de lado)
   - 🗡️ Excalibur
   - 🎯 Missão Alvo
-  - 💧 Mulher do Lago
+  - 💧 Dama do Lago
 - Navegação por etapas com contador
 - Condições de vitória detalhadas
 
@@ -66,14 +66,14 @@ Este assistente digital facilita a experiência de jogo do Avalon, eliminando a 
 ### Opcionais - Bem
 
 - 👁️ **Percival** - Conhece Merlin e Morgana
-- 👍🏻 **Lancelot Bom** - Par com Lancelot Mal
+- 👍🏻 **Lancelot Bom** - Par com Lancelot Mau
 
 ### Opcionais - Mal
 
 - 🧙‍♀️ **Morgana** - Aparece como Merlin para Percival
 - 🐍 **Mordred** - Invisível para Merlin
 - 👻 **Oberon** - Não conhece outros servos
-- 👎🏻 **Lancelot Mal** - Par com Lancelot Bom
+- 👎🏻 **Lancelot Mau** - Par com Lancelot Bom
 
 ### Automáticos
 
@@ -128,7 +128,7 @@ O sistema adapta automaticamente a sequência baseada nos personagens selecionad
 3. Servos do mal se reconhecem
 4. Merlin vê os servos do mal
 5. Percival vê Merlin (se ativo)
-6. Lancelots se reconhecem (se ativo, 7+ jogadores)
+6. Lancelots se reconhecem (se ativo, 8+ jogadores)
 7. Encerramento
 
 ## 📱 Responsividade

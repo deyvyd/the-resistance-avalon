@@ -29,7 +29,7 @@ const ROLE_DEFINITIONS = {
     name: "Lancelot Bom",
     icon: "👍🏻",
     team: "good",
-    description: "Par com Lancelot Mal",
+    description: "Par com Lancelot Mau",
     linkedRole: "lancelotEvil",
   },
 
@@ -53,7 +53,7 @@ const ROLE_DEFINITIONS = {
     description: "Não conhece outros servos",
   },
   lancelotEvil: {
-    name: "Lancelot Mal",
+    name: "Lancelot Mau",
     icon: "👎🏻",
     team: "evil",
     description: "Par com Lancelot Bom",
@@ -91,18 +91,18 @@ const AUDIO_DESCRIPTIONS = {
   1: "Bem-vindos ao Avalon...",
   2: "Todos, fechem os olhos...",
   3: "Servos do mal, levantem o polegar",
-  "3-lancelot": "Servos do mal, incluindo o Lancelot mal, levantem o polegar",
+  "3-lancelot": "Servos do mal, incluindo o Lancelot mau, levantem o polegar",
   4: "Servos do mal, abram os olhos e conheçam seus companheiros",
   "4-oberon": "Servos do mal, exceto Oberon, abram os olhos...",
-  "4-lancelot": "Servos do mal, exceto o Lancelot mal, abram os olhos...",
+  "4-lancelot": "Servos do mal, exceto o Lancelot mau, abram os olhos...",
   "4-oberon-lancelot":
-    "Servos do mal, exceto Oberon e o Lancelot mal, abram os olhos...",
+    "Servos do mal, exceto Oberon e o Lancelot mau, abram os olhos...",
   5: "Servos do mal, fechem os olhos",
   "5-mordred": "Servos do mal, fechem os olhos. Mordred, abaixe seu polegar",
   "5-lancelot":
-    "Servos do mal, fechem os olhos. Lancelot mal, abaixe seu polegar",
+    "Servos do mal, fechem os olhos. Lancelot mau, abaixe seu polegar",
   "5-mordred-lancelot":
-    "Servos do mal, fechem os olhos. Mordred e Lancelot mal, abaixem seus polegares",
+    "Servos do mal, fechem os olhos. Mordred e Lancelot mau, abaixem seus polegares",
   6: "Merlin, abra os olhos e veja os servos do mal",
   7: "Servos do mal, abaixem seus polegares. Merlin, feche os olhos",
   8: "Merlin, levante o polegar",
@@ -306,7 +306,7 @@ class AvalonApp {
 
     // Se exceder o limite do mal, desmarcar personagens opcionais até caber
     while (this.evilCount() > maxEvil) {
-      // Desmarcar personagens opcionais na ordem: Lancelot Mal, Oberon, Mordred, Morgana
+      // Desmarcar personagens opcionais na ordem: Lancelot Mau, Oberon, Mordred, Morgana
       if (this.roles.lancelotEvil) {
         this.roles.lancelotEvil = false;
         this.roles.lancelotGood = false; // Linkado
@@ -552,7 +552,7 @@ class AvalonApp {
       sequence.push("4");
     }
 
-    // 5. Fecham olhos (e Lancelot mal e/ou Mordred abaixam polegar)
+    // 5. Fecham olhos (e Lancelot mau e/ou Mordred abaixam polegar)
     if (this.roles.mordred && hasLancelots) {
       sequence.push("5-mordred-lancelot");
     } else if (this.roles.mordred) {

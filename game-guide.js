@@ -311,15 +311,15 @@ AvalonApp.prototype.generateGameSteps = function (
     badges: ["Missão"],
   });
 
-  // MULHER DO LAGO (se ativo) - VEM APÓS FASE DA MISSÃO
+  // Dama do Lago (se ativo) - VEM APÓS FASE DA MISSÃO
   if (ladyOfLake) {
     steps.push({
       number: stepNumber++,
-      title: "💧 Mulher do Lago",
+      title: "💧 Dama do Lago",
       content: [
         {
           type: "note",
-          text: "O token da Mulher do Lago começa com o jogador imediatamente à esquerda (sentido horário) do líder inicial.",
+          text: "O token da Dama do Lago começa com o jogador imediatamente à esquerda (sentido horário) do líder inicial.",
         },
         {
           type: "action",
@@ -340,11 +340,11 @@ AvalonApp.prototype.generateGameSteps = function (
         },
         {
           type: "action",
-          text: "O jogador examinado recebe o token da Mulher do Lago",
+          text: "O jogador examinado recebe o token da Dama do Lago",
         },
         {
           type: "note",
-          text: "Um jogador que já usou a Mulher do Lago não pode ser examinado",
+          text: "Um jogador que já usou a Dama do Lago não pode ser examinado",
         },
       ],
       type: "optional",
