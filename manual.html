@@ -282,10 +282,10 @@
                   <td>4ª Missão</td>
                   <td>3</td>
                   <td>3</td>
-                  <td style="background: rgba(220, 20, 60, 0.15)">4</td>
-                  <td style="background: rgba(220, 20, 60, 0.15)">5</td>
-                  <td style="background: rgba(220, 20, 60, 0.15)">5</td>
-                  <td style="background: rgba(220, 20, 60, 0.15)">5</td>
+                  <td style="background: rgba(220, 133, 20, 0.15)">4</td>
+                  <td style="background: rgba(220, 133, 20, 0.15)">5</td>
+                  <td style="background: rgba(220, 133, 20, 0.15)">5</td>
+                  <td style="background: rgba(220, 133, 20, 0.15)">5</td>
                 </tr>
                 <tr>
                   <td>5ª Missão</td>
@@ -344,9 +344,9 @@
           <div class="warning-box">
             <p>
               <i class="fas fa-exclamation-triangle"></i>
-              <strong>Importante:</strong> Os jogadores do mal se conhecem entre
-              si, mas Merlin não pode revelar que sabe quem são os vilões, ou
-              tudo estará perdido!
+              <strong>Importante:</strong> Os jogadores do mal se conhecem e
+              Merlin sabe quem são eles, mas não pode revelar que sabe ou tudo
+              estará perdido! Ele precisa ser sutil!
             </p>
           </div>
         </div>
@@ -373,20 +373,20 @@
               Cada jogador vota secretamente usando seus
               <strong>Tokens de Voto</strong>:
             </li>
-            <li style="padding-left: 40px">
-              •
-              <span class="term-tooltip"
-                >Aprovar<span class="tooltip-text">Approve</span></span
-              >
-              - aceitar a equipe proposta
-            </li>
-            <li style="padding-left: 40px">
-              •
-              <span class="term-tooltip"
-                >Rejeitar<span class="tooltip-text">Reject</span></span
-              >
-              - recusar a equipe proposta
-            </li>
+            <ul class="list-custom" style="padding-left: 20px">
+              <li>
+                <span class="term-tooltip"
+                  >Aprovar<span class="tooltip-text">Approve</span></span
+                >
+                - aceitar a equipe proposta
+              </li>
+              <li>
+                <span class="term-tooltip"
+                  >Rejeitar<span class="tooltip-text">Reject</span></span
+                >
+                - recusar a equipe proposta
+              </li>
+            </ul>
             <li>Os votos são revelados simultaneamente</li>
             <li>
               Se a <strong>maioria aprovar</strong>, a equipe vai para a missão
@@ -422,18 +422,37 @@
               Cada membro da equipe aprovada recebe
               <strong>Cartas de Missão</strong>:
             </li>
-            <li style="padding-left: 40px">
-              •
-              <span class="term-tooltip"
-                >Sucesso<span class="tooltip-text">Success</span></span
-              >
-            </li>
-            <li style="padding-left: 40px">
-              •
-              <span class="term-tooltip"
-                >Falha<span class="tooltip-text">Fail</span></span
-              >
-            </li>
+            <ul class="list-custom" style="padding-left: 20px">
+              <li>
+                <span class="term-tooltip"
+                  >Sucesso<span class="tooltip-text">Success</span></span
+                >
+              </li>
+              <ul class="list-custom" style="padding-left: 20px">
+                <li>
+                  Jogadores do <strong>BEM</strong> SEMPRE devem jogar essa
+                  carta
+                </li>
+                <li>
+                  Jogadores do <strong>MAL</strong> PODEM jogar essa carta para
+                  blefar
+                </li>
+              </ul>
+              <li>
+                <span class="term-tooltip"
+                  >Falha<span class="tooltip-text">Fail</span></span
+                >
+              </li>
+              <ul class="list-custom" style="padding-left: 20px">
+                <li>
+                  Jogadores do <strong>BEM</strong> NUNCA devem jogar essa carta
+                </li>
+                <li>
+                  Jogadores do <strong>MAL</strong> NORMALMENTE jogam essa carta
+                  para sabotar missões
+                </li>
+              </ul>
+            </ul>
             <li>
               Cada um escolhe <strong>secretamente</strong> uma carta e joga
               virada para baixo
@@ -447,28 +466,7 @@
               A missão <strong>FALHA</strong> se houver uma ou mais cartas de
               falha
             </li>
-          </ul>
-
-          <div class="highlight-box">
-            <p><strong>Regras Importantes:</strong></p>
-            <ul class="list-custom">
-              <li>
-                Jogadores do <strong>BEM</strong> devem sempre jogar
-                <span class="term-tooltip"
-                  >Sucesso<span class="tooltip-text">Success</span></span
-                >
-              </li>
-              <li>
-                Jogadores do <strong>MAL</strong> podem escolher
-                <span class="term-tooltip"
-                  >Sucesso<span class="tooltip-text">Success</span></span
-                >
-                ou
-                <span class="term-tooltip"
-                  >Falha<span class="tooltip-text">Fail</span></span
-                >
-                (para enganar!)
-              </li>
+            <ul class="list-custom" style="padding-left: 20px">
               <li>
                 <strong>Exceção:</strong> Na 4ª missão com 7+ jogadores, são
                 necessárias
@@ -481,7 +479,7 @@
                 para a missão falhar
               </li>
             </ul>
-          </div>
+          </ul>
 
           <h3 class="section-subtitle">Progressão do Jogo</h3>
           <p>

@@ -3,18 +3,15 @@
 ## Regra Geral (vale para TODAS as variantes)
 
 - **Sempre que Lancelot for usado, ambos os personagens Lancelot devem ser incluídos no jogo**:
-
   - **Lancelot Leal ao Bem**
   - **Lancelot Leal ao Mal**
 
 - Os dois Lancelots **substituem exatamente**:
-
   - **1 personagem do Bem**
   - **1 personagem do Mal**
 
 - Os jogadores **nunca trocam suas cartas de Personagem**.
 - Se ocorrer uma troca de lealdade, **apenas a lealdade muda**, afetando:
-
   - condições de vitória
   - regras de cartas de Missão
 
@@ -29,7 +26,6 @@
 - Inclua **ambos os Lancelots** (1 Bom e 1 Mau).
 - Remova **1 personagem do Bem** e **1 do Mal** do conjunto padrão.
 - Crie um **Baralho de Lealdade** com:
-
   - 3 cartas “Sem Mudança”
   - 2 cartas “Trocar Lealdade”
 
@@ -41,7 +37,6 @@
 
 - O **Lancelot Mau NÃO abre os olhos** durante a revelação dos Minions.
 - Em vez disso, ele **levanta o polegar**, para que:
-
   - os Minions saibam quem ele é
   - ele **não saiba** quem são os outros vilões
 
@@ -50,12 +45,10 @@
 ### Durante o Jogo
 
 - No **início da 3ª rodada** e **no início de cada rodada seguinte**:
-
   - revele 1 carta do Baralho de Lealdade.
 
 - **Sem Mudança** → nada acontece.
 - **Trocar Lealdade** → no início da rodada:
-
   - os dois Lancelots **secretamente trocam de lealdade**
   - a troca vale para **todos os efeitos do jogo**
 
@@ -80,7 +73,6 @@
 
 - Inclua **ambos os Lancelots** (1 Bom e 1 Mau).
 - Crie um **Baralho de Lealdade** com:
-
   - 5 cartas “Sem Mudança”
   - 2 cartas “Trocar Lealdade”
 
@@ -92,7 +84,6 @@
 ### Fase de Revelação
 
 - Igual à Variante 1:
-
   - Lancelot Mau **não abre os olhos**
   - Lancelot Mau **levanta o polegar**
 
@@ -102,7 +93,6 @@
 
 - Uma troca ocorre no **início da rodada indicada** por uma carta “Trocar Lealdade”.
 - **Cartas de Missão são obrigatórias**:
-
   - Lancelot Mau **deve jogar Falha**
   - Lancelot Bom **deve jogar Sucesso**
 
@@ -136,7 +126,6 @@
 ### Fase de Revelação (jogo base + etapa extra)
 
 - Execute a Fase de Revelação normal do Avalon:
-
   - Minions abrem os olhos e se reconhecem
 
 - **Etapa adicional ao final**:
@@ -149,7 +138,6 @@
 ### Resultado da Revelação
 
 - O **Lancelot Mau abre os olhos normalmente** e:
-
   - conhece os outros Minions
   - é conhecido por eles
 
@@ -175,205 +163,157 @@
 
 ---
 
-Ótima pergunta — **misturar módulos do Lancelot** é exatamente o que grupos experientes acabam fazendo depois de algumas partidas 😄
-Vou sugerir **combinações coerentes** (que não quebram o jogo), explicar **o efeito no equilíbrio** e **quando usar cada uma**.
+---
 
-> ⚠️ Premissa importante
-> Misture **regras**, não “meias frases soltas”. Cada combinação abaixo é **fechada e jogável**.
+# 🧪 Variantes válidas do Lancelot
 
 ---
 
-# 🧪 Combinações interessantes entre as variantes
-
-## 🔹 1. Variante 2 + Conhecimento mútuo (Var. 3)
-
-**“Troca previsível + jogo psicológico”**
-
-### Regras usadas
-
-- Troca de lealdade **pré-determinada** (Var. 2)
-- Obrigatoriedade de carta de missão (Var. 2)
-- **Lancelots se conhecem** (Var. 3)
-- Lancelot Mau **abre os olhos normalmente** (base)
-
-### Efeito
-
-- Dedução **limpa**
-- Bluff ocorre **na mesa**, não na missão
-- Os Lancelots sabem exatamente:
-
-  - quando vão trocar
-  - como isso afeta o outro
-
-### Equilíbrio
-
-- ⚖️ Muito equilibrado
-- 🔵 Levemente pró-Bem
-
-### Ideal para
-
-- 7–9 jogadores
-- Grupos que gostam de conversa estratégica
-- Torneios ou mesas “sérias”
-
-⭐ **Recomendação nº 1** para grupos experientes.
-
----
-
-## 🔹 2. Variante 1 + Conhecimento mútuo (Var. 3)
-
-**“Caos consciente”**
-
-### Regras usadas
-
-- Troca oculta e aleatória (Var. 1)
-- Lancelots se conhecem (Var. 3)
-- Lancelot Mau **mostra o polegar** (Var. 1)
-
-### Efeito
-
-- Só os dois Lancelots sabem:
-
-  - quando uma jogada estranha faz sentido
-
-- O resto da mesa fica no escuro
-- Paranoia constante
-
-### Equilíbrio
-
-- 🔴 Pró-Mal
-- Muito dependente da habilidade dos Lancelots
-
-### Ideal para
-
-- 8–10 jogadores
-- Grupos que gostam de caos
-- Mesas narrativas / divertidas
-
-⚠️ Não recomendado se o Bem já perde muito.
-
----
-
-## 🔹 3. Variante 2 + Troca oculta (Var. 1)
-
-**“Timing conhecido, resultado incerto”**
-
-### Regras usadas
-
-- Cartas de lealdade reveladas (Var. 2)
-- Troca ocorre **sem aviso público**
-- Obrigatoriedade de carta de missão (Var. 2)
-
-### Efeito
-
-- Todos sabem _quando pode trocar_
-- Ninguém sabe _se trocou_
-- Missões continuam confiáveis
-
-### Equilíbrio
-
-- ⚖️ Muito equilibrado
-- Levemente pró-Bem
-
-### Ideal para
-
-- 6–8 jogadores
-- Grupos que querem tensão sem caos excessivo
-
----
-
-## 🔹 4. Variante 1 + Obrigatoriedade de missão (Var. 2)
+## 🔹 1. **Variante 1 + Obrigatoriedade de missão (Var. 2)**
 
 **“Caos controlado”**
 
-### Regras usadas
+### 🛠️ Preparação
 
-- Troca aleatória e oculta (Var. 1)
-- Lancelot Mau **sempre falha**
-- Lancelot Bom **sempre passa**
-- Sem cartas reveladas
+- Utilize **as duas cartas de personagem Lancelot**, substituindo um personagem do Bem e um do Mal.
+- Monte o **baralho de Lealdade** com **7 cartas**:
+  - 5 _Sem Troca_
+  - 2 _Troca de Lealdade_
 
-### Efeito
-
-- Missões voltam a ser informativas
-- A dúvida fica **no estado atual do Lancelot**
-- Reduz blefes injustos
-
-### Equilíbrio
-
-- ⚖️ Equilibrado
-- 🔵 Levemente pró-Bem
-
-### Ideal para
-
-- 7 jogadores
-- Grupos que não gostam de blefe em missão
+- Embaralhe e coloque o baralho **virado para baixo**, próximo ao placar de missões.
 
 ---
 
-## 🔹 5. Variante 3 + Isolamento do Mal (Var. 1)
+### 👁️ Revelação
 
-**“Duelo de Lancelots”**
-
-### Regras usadas
-
-- Lancelots se conhecem (Var. 3)
-- Lancelot Mau:
-
-  - não abre os olhos
-  - só mostra o polegar
-
-- Troca oculta (Var. 1)
-
-### Efeito
-
-- Dois jogadores jogando **um meta-jogo próprio**
-- O Mal perde coordenação
-- O Bem sofre com ruído
-
-### Equilíbrio
-
-- ⚖️ Variável
-- Bom se o Mal costuma vencer demais
-
-### Ideal para
-
-- 7–8 jogadores
-- Grupos muito experientes
+- O **Lancelot do Mal não abre os olhos**, mas **levanta o polegar** para os Minions do Mal.
+- Os Lancelots **não se reconhecem entre si**.
+- Nenhum Lancelot é revelado ao Bem.
 
 ---
 
-# 🧠 Combinações que eu NÃO recomendo
+### 🎲 Durante o jogo
 
-### 🚫 Variante 1 + 2 + 3 tudo junto
+- **No início de cada rodada (da 1ª à 5ª)**:
+  - revele **uma carta** do baralho de Lealdade.
 
-- Informação demais misturada
-- Ninguém entende o estado do jogo
-- Discussões constantes de regra
-
----
-
-### 🚫 Conhecimento mútuo + Mordred + Oberon
-
-- Bem praticamente cego
-- Extremamente frustrante
+- Se for _Troca de Lealdade_, os Lancelots **trocam de lealdade em segredo**.
+- Não há anúncio público do resultado.
+- **Obrigatoriedade de cartas de missão**:
+  - Lancelot alinhado ao Mal **deve jogar Falha**.
+  - Lancelot alinhado ao Bem **deve jogar Sucesso**.
 
 ---
 
-# 🏁 Ranking pessoal (do melhor para o mais caótico)
+### ⚖️ Tendência
 
-1. 🥇 **Var. 2 + Var. 3**
-2. 🥈 **Var. 2 + troca oculta**
-3. 🥉 **Var. 1 + obrigatoriedade**
-4. Var. 1 + Var. 3
-5. Var. 3 pura (situação específica)
+- ⚖️ Equilibrada
+- 🔵 Levemente favorável ao Bem
 
 ---
 
-Se quiser, no próximo passo posso:
+### 👥 Ideal para
 
-- Criar **scripts prontos de Reveal Phase** para cada combinação
-- Ajustar **número de cartas “Switch”** para balancear
-- Montar **setups ideais por número de jogadores**
+- 5–7 jogadores
+- Grupos que preferem missões informativas
+- Mesas que querem tensão sem blefe excessivo
 
-É só dizer ⚔️
+---
+
+## 🔹 2. **Variante 2 + Conhecimento mútuo (Var. 3)**
+
+**“Troca previsível + jogo psicológico”**
+
+### 🛠️ Preparação
+
+- Utilize **as duas cartas de personagem Lancelot**, substituindo um personagem do Bem e um do Mal.
+- Monte o **baralho de Lealdade** com **7 cartas**:
+  - 5 _Sem Troca_
+  - 2 _Troca de Lealdade_
+
+- Embaralhe e **revele 5 cartas face para cima**, em ordem, acima do placar de missões.
+- As cartas indicam **em quais rodadas ocorrerá a troca de lealdade**.
+
+---
+
+### 👁️ Revelação
+
+- O **Lancelot do Mal não abre os olhos**, mas **levanta o polegar** para os Minions do Mal.
+- Os **dois Lancelots abrem os olhos entre si**, reconhecendo seus respectivos pares.
+- Nenhum Lancelot é revelado ao Bem.
+
+---
+
+### 🎲 Durante o jogo
+
+- No início de cada rodada indicada por uma carta _Troca de Lealdade_, os Lancelots **trocam de lealdade automaticamente**.
+- A troca é **conhecida publicamente quanto ao momento**, mas **as identidades permanecem secretas**.
+- **Obrigatoriedade de cartas de missão**:
+  - Lancelot alinhado ao Mal **deve jogar Falha**.
+  - Lancelot alinhado ao Bem **deve jogar Sucesso**.
+
+---
+
+### ⚖️ Tendência
+
+- ⚖️ Equilibrada
+- 🔵 Levemente favorável ao Bem
+
+---
+
+### 👥 Ideal para
+
+- 8–10 jogadores
+- Grupos experientes
+- Mesas competitivas ou com foco em dedução verbal
+
+---
+
+## 🔹 3. **Variante 1 + Conhecimento mútuo (Var. 3)**
+
+**“Caos consciente”**
+
+### 🛠️ Preparação
+
+- Utilize **as duas cartas de personagem Lancelot**, substituindo um personagem do Bem e um do Mal.
+- Monte o **baralho de Lealdade** com **5 cartas**:
+  - 3 _Sem Troca_
+  - 2 _Troca de Lealdade_
+
+- Embaralhe e coloque o baralho **virado para baixo**, próximo ao placar de missões.
+
+---
+
+### 👁️ Revelação
+
+- O **Lancelot do Mal não abre os olhos**, mas **levanta o polegar** para os Minions do Mal.
+- Os **dois Lancelots abrem os olhos entre si**, reconhecendo seus respectivos pares.
+- Nenhum Lancelot é revelado ao Bem.
+
+---
+
+### 🎲 Durante o jogo
+
+- A partir do início da **3ª rodada**, e no início de cada rodada seguinte:
+  - revele **uma carta** do baralho de Lealdade.
+
+- Se for _Troca de Lealdade_, os Lancelots **trocam de lealdade em segredo**.
+- Não há anúncio público do resultado.
+- **Não há obrigatoriedade** de cartas de missão; Lancelots podem blefar normalmente.
+
+---
+
+### ⚖️ Tendência
+
+- 🔴 Levemente favorável ao Mal
+- Fortemente dependente da habilidade dos Lancelots
+
+---
+
+### 👥 Ideal para
+
+- 8–10 jogadores
+- Grupos experientes
+- Mesas que gostam de blefe e alta tensão social
+
+---

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -247,6 +247,109 @@
       </div>
     </div>
 
+    <!-- Modal de Configuração de Lancelots -->
+    <div id="lancelotConfigModal" class="modal" style="display: none">
+      <div class="modal-backdrop" onclick="app.closeLancelotConfig()"></div>
+      <div class="modal-content modal-content-wide">
+        <h2 class="modal-title">🔄 Configurar Lancelots</h2>
+
+        <!-- Checkboxes de Variantes -->
+        <div class="guide-section">
+          <h3 class="guide-section-title">
+            <i class="fas fa-toggle-on"></i> Selecione as variantes (máximo 2)
+          </h3>
+
+          <div class="lancelot-variants">
+            <div class="variant-toggle">
+              <input
+                type="checkbox"
+                id="lancelotVar1"
+                onchange="app.toggleLancelotVariant(1, this.checked)"
+              />
+              <label for="lancelotVar1">
+                <span class="variant-icon">🎲</span>
+                <div class="variant-info">
+                  <strong>Variante 1</strong>
+                  <small>Trocas de Lealdade Ocultas</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="variant-toggle">
+              <input
+                type="checkbox"
+                id="lancelotVar2"
+                onchange="app.toggleLancelotVariant(2, this.checked)"
+              />
+              <label for="lancelotVar2">
+                <span class="variant-icon">📅</span>
+                <div class="variant-info">
+                  <strong>Variante 2</strong>
+                  <small>Trocas Predeterminadas</small>
+                </div>
+              </label>
+            </div>
+
+            <div class="variant-toggle">
+              <input
+                type="checkbox"
+                id="lancelotVar3"
+                onchange="app.toggleLancelotVariant(3, this.checked)"
+              />
+              <label for="lancelotVar3">
+                <span class="variant-icon">👁️</span>
+                <div class="variant-info">
+                  <strong>Variante 3</strong>
+                  <small>Reconhecimento Mútuo</small>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview da Configuração -->
+        <div class="guide-section">
+          <h3 class="guide-section-title">
+            <i class="fas fa-clipboard-list"></i> Configuração Atual
+          </h3>
+          <div id="lancelotPreview" class="lancelot-preview">
+            <div class="preview-empty">
+              <i class="fas fa-info-circle"></i>
+              <p>
+                <strong>⚠️ NENHUMA VARIANTE SELECIONADA</strong>
+              </p>
+              <p>
+                Selecione pelo menos uma variante para ver as informações de
+                preparação e regras.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="modal-actions">
+          <a
+            href="manual.html#lancelots"
+            class="btn btn-primary"
+            target="_blank"
+          >
+            <i class="fas fa-book"></i> Ver Manual
+          </a>
+          <button class="btn btn-secondary" onclick="app.closeLancelotConfig()">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+          <button
+            class="btn btn-start"
+            id="lancelotConfirmBtn"
+            onclick="app.confirmLancelotConfig()"
+            disabled
+          >
+            <i class="fas fa-check"></i> Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- Modal do Guia do Jogo -->
     <div id="gameGuideModal" class="modal" style="display: none">
       <div class="modal-backdrop" onclick="app.closeGameGuide()"></div>
@@ -445,6 +548,7 @@
     </div>
 
     <script src="app-mp3.js"></script>
+    <script src="lancelot-config.js"></script>
     <script src="game-guide.js"></script>
   </body>
 </html>

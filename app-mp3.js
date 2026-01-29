@@ -271,11 +271,31 @@ class AvalonApp {
                 `;
 
         if (!isMandatory) {
-          roleDiv.onclick = () => {
-            if (isActive || canAdd) {
-              this.toggleRole(roleId);
-            }
-          };
+          // Lancelots abrem modal de configuração
+          if (roleId === "lancelotGood" || roleId === "lancelotEvil") {
+            roleDiv.onclick = () => {
+              // Se já estiver ativo, abrir modal para reconfigurar
+              if (isActive) {
+                this.openLancelotConfig();
+              }
+              // Se não estiver ativo mas pode ativar, ativar ambos e abrir modal
+              else if (canAdd) {
+                this.roles.lancelotGood = true;
+                this.roles.lancelotEvil = true;
+                this.updateTeamCounters();
+                this.renderRoles();
+                // Abrir modal após renderizar
+                setTimeout(() => this.openLancelotConfig(), 100);
+              }
+            };
+          } else {
+            // Papéis normais
+            roleDiv.onclick = () => {
+              if (isActive || canAdd) {
+                this.toggleRole(roleId);
+              }
+            };
+          }
         }
       }
 
@@ -511,12 +531,10 @@ class AvalonApp {
     const totalEvil = this.totalEvilCount();
 
     // Atualizar títulos das seções
-    document.getElementById(
-      "goodRolesTitle"
-    ).innerHTML = `🛡️ Forças do Bem <span style="color: #ffe396;">→</span> <span style="color: white;">${totalGood} Personagens</span>`;
-    document.getElementById(
-      "evilRolesTitle"
-    ).innerHTML = `🗡️ Forças do Mal <span style="color: #ffe396;">→</span> <span style="color: white;">${totalEvil} Personagens</span>`;
+    document.getElementById("goodRolesTitle").innerHTML =
+      `🛡️ Forças do Bem <span style="color: #ffe396;">→</span> <span style="color: white;">${totalGood} Personagens</span>`;
+    document.getElementById("evilRolesTitle").innerHTML =
+      `🗡️ Forças do Mal <span style="color: #ffe396;">→</span> <span style="color: white;">${totalEvil} Personagens</span>`;
 
     // Sempre habilitar botão de iniciar (times sempre completos)
     const startBtn = document.getElementById("startBtn");
@@ -528,6 +546,77 @@ class AvalonApp {
     const sequence = [];
     const hasLancelots = this.roles.lancelotGood || this.roles.lancelotEvil;
 
+    // Se não tem Lancelots, usar lógica sem Lancelots
+    if (!hasLancelots) {
+      // 1. Introdução
+      sequence.push("1");
+
+      // 2. Preparação
+      sequence.push("2");
+
+      // 3. Servos do mal levantam polegar
+      sequence.push("3");
+
+      // 4. Servos se reconhecem
+      if (this.roles.oberon) {
+        sequence.push("4-oberon");
+      } else {
+        sequence.push("4");
+      }
+
+      // 5. Fecham olhos
+      if (this.roles.mordred) {
+        sequence.push("5-mordred");
+      } else {
+        sequence.push("5");
+      }
+
+      // 6. Merlin abre os olhos
+      sequence.push("6");
+
+      // 7. Merlin fecha os olhos
+      sequence.push("7");
+
+      // 8-10. Percival (se estiver no jogo)
+      if (this.roles.percival) {
+        // 8. Merlin (e Morgana) levantam polegar
+        if (this.roles.morgana) {
+          sequence.push("8-morgana");
+        } else {
+          sequence.push("8");
+        }
+
+        // 9. Percival vê
+        if (this.roles.morgana) {
+          sequence.push("9-morgana");
+        } else {
+          sequence.push("9");
+        }
+
+        // 10. Percival fecha olhos
+        sequence.push("10");
+      }
+
+      // 13. Todos abrem os olhos
+      sequence.push("13");
+
+      // 14. Início do jogo
+      sequence.push("14");
+
+      return sequence;
+    }
+
+    // ===== COM LANCELOTS =====
+
+    // Verificar se tem configuração de Lancelots
+    if (!this.lancelotConfig || !this.lancelotConfig.variant) {
+      alert("Configure as variantes de Lancelot antes de iniciar a narração!");
+      return [];
+    }
+
+    const config = this.lancelotConfig;
+    const usesRecognition = config.recognition; // Var 3 ativa?
+
     // 1. Introdução
     sequence.push("1");
 
@@ -535,32 +624,21 @@ class AvalonApp {
     sequence.push("2");
 
     // 3. Servos do mal levantam polegar
-    if (hasLancelots) {
-      sequence.push("3-lancelot");
-    } else {
-      sequence.push("3");
-    }
+    // TODAS as variantes usam polegar (Lancelot Mau não abre olhos)
+    sequence.push("3-lancelot");
 
     // 4. Servos se reconhecem
-    if (this.roles.oberon && hasLancelots) {
+    if (this.roles.oberon) {
       sequence.push("4-oberon-lancelot");
-    } else if (this.roles.oberon) {
-      sequence.push("4-oberon");
-    } else if (hasLancelots) {
-      sequence.push("4-lancelot");
     } else {
-      sequence.push("4");
+      sequence.push("4-lancelot");
     }
 
-    // 5. Fecham olhos (e Lancelot mau e/ou Mordred abaixam polegar)
-    if (this.roles.mordred && hasLancelots) {
+    // 5. Fecham olhos (Lancelot mau abaixa polegar)
+    if (this.roles.mordred) {
       sequence.push("5-mordred-lancelot");
-    } else if (this.roles.mordred) {
-      sequence.push("5-mordred");
-    } else if (hasLancelots) {
-      sequence.push("5-lancelot");
     } else {
-      sequence.push("5");
+      sequence.push("5-lancelot");
     }
 
     // 6. Merlin abre os olhos
@@ -589,8 +667,8 @@ class AvalonApp {
       sequence.push("10");
     }
 
-    // 11-12. Lancelots se reconhecem (apenas se 8+ jogadores)
-    if (hasLancelots && this.players >= 8) {
+    // 11-12. Lancelots se reconhecem (se Var 3 ativa E 8+ jogadores)
+    if (usesRecognition && this.players >= 8) {
       sequence.push("11");
       sequence.push("12");
     }
@@ -649,7 +727,7 @@ class AvalonApp {
     console.log(
       `[AVALON] Tocando áudio ${this.currentAudioIndex + 1}/${
         this.audioSequence.length
-      }: ${audioPath}`
+      }: ${audioPath}`,
     );
 
     // Atualizar UI
@@ -701,7 +779,7 @@ class AvalonApp {
     this.audioElement.addEventListener("error", (e) => {
       console.error(`[AVALON] Erro ao carregar áudio: ${audioPath}`, e);
       alert(
-        `Erro ao carregar o áudio ${audioFile}.mp3. Verifique se o arquivo existe na pasta "audios/".`
+        `Erro ao carregar o áudio ${audioFile}.mp3. Verifique se o arquivo existe na pasta "audios/".`,
       );
     });
 
@@ -709,7 +787,7 @@ class AvalonApp {
       console.log(
         "[AVALON] Áudio carregado, duração:",
         this.audioElement.duration,
-        "s"
+        "s",
       );
     });
 
@@ -740,7 +818,7 @@ class AvalonApp {
       "[AVALON] togglePlayPause chamado, isPlaying:",
       this.isPlaying,
       "audioElement:",
-      !!this.audioElement
+      !!this.audioElement,
     );
 
     if (!this.audioElement) {
@@ -879,7 +957,7 @@ class AvalonApp {
             ? "desabilitado"
             : "habilitado"
           : "não encontrado"
-      }`
+      }`,
     );
   }
 
@@ -936,7 +1014,7 @@ class AvalonApp {
     this.settings.narrationVolume =
       document.getElementById("narrationVolumeSetting").value / 100;
     this.settings.pauseDuration = parseInt(
-      document.getElementById("pauseDurationSetting").value
+      document.getElementById("pauseDurationSetting").value,
     );
     this.settings.musicVolumeFaded = this.settings.musicVolume * 0.33; // 10% relativo
 
@@ -1017,7 +1095,7 @@ class AvalonApp {
     }
 
     const narrationVol = document.getElementById(
-      "narrationVolumeSetting"
+      "narrationVolumeSetting",
     ).value;
     document.getElementById("narrationVolumeDisplay").textContent =
       narrationVol + "%";
@@ -1090,7 +1168,7 @@ class AvalonApp {
 
     // Música da tela de seleção
     this.selectionMusic = new Audio(
-      "src/assets/audios/soundtrack-selection.mp3"
+      "src/assets/audios/soundtrack-selection.mp3",
     );
     this.selectionMusic.loop = true;
     this.selectionMusic.volume = this.settings.musicVolume;
@@ -1106,12 +1184,12 @@ class AvalonApp {
         .play()
         .then(() => {
           console.log(
-            "[AVALON] ✓ Música de seleção iniciada com sucesso imediatamente"
+            "[AVALON] ✓ Música de seleção iniciada com sucesso imediatamente",
           );
         })
         .catch((e) => {
           console.log(
-            "[AVALON] ⚠️ Tentativa imediata falhou, aguardando interação..."
+            "[AVALON] ⚠️ Tentativa imediata falhou, aguardando interação...",
           );
 
           // Estratégia 2: Tentar em múltiplos eventos
@@ -1126,13 +1204,13 @@ class AvalonApp {
 
           const startOnInteraction = () => {
             console.log(
-              "[AVALON] 🎵 Tentando iniciar música após interação..."
+              "[AVALON] 🎵 Tentando iniciar música após interação...",
             );
             this.selectionMusic
               .play()
               .then(() => {
                 console.log(
-                  "[AVALON] ✓ Música iniciada após interação do usuário"
+                  "[AVALON] ✓ Música iniciada após interação do usuário",
                 );
                 // Remover todos os listeners
                 events.forEach((evt) => {
@@ -1163,7 +1241,7 @@ class AvalonApp {
               console.log("[AVALON] 🔄 Tentando iniciar música após 500ms...");
               this.selectionMusic.play().catch(() => {
                 console.log(
-                  "[AVALON] ⚠️ Ainda aguardando interação do usuário"
+                  "[AVALON] ⚠️ Ainda aguardando interação do usuário",
                 );
               });
             }
@@ -1174,7 +1252,7 @@ class AvalonApp {
             window.addEventListener("load", () => {
               if (this.selectionMusic.paused) {
                 console.log(
-                  "[AVALON] 🔄 Tentando iniciar música após page load..."
+                  "[AVALON] 🔄 Tentando iniciar música após page load...",
                 );
                 this.selectionMusic.play().catch(() => {});
               }
@@ -1187,7 +1265,7 @@ class AvalonApp {
   initNarrationMusic() {
     // Música da narração
     this.narrationMusic = new Audio(
-      "src/assets/audios/soundtrack-narration.mp3"
+      "src/assets/audios/soundtrack-narration.mp3",
     );
     this.narrationMusic.loop = true;
     this.narrationMusic.volume = this.settings.musicVolume;
